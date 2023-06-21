@@ -1,6 +1,7 @@
 "use client"
 import { styled } from '@mui/system';
 import Button from '@mui/material/Button';
+import { Form } from '@/components/Form';
 
 const Container = styled('div')({
   
@@ -29,14 +30,7 @@ const Text = styled('p')({
 export default function Home() {
   return (
     <Container>
-      <Heading>Crie um deslocamento</Heading>
-      <Text>
-        Deslocamento é uma solução que permite gerenciar eficientemente
-        deslocamentos. Ele oferece recursos para clientes, condutores e
-        veículos, permitindo a criação, edição e exclusão de informações.
-      </Text>
-
-      <Button size="large" variant="contained" href="/about">Link</Button>
+      <Form></Form>
     </Container>
   );
 }
