@@ -6,23 +6,51 @@ import {
   SelectChangeEvent,
   TextField,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { FormLayout } from "./FormLayout";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
 
 const FormClient = () => {
-  const [UFs, setUFs] = React.useState("");
+  const [UF, setUF] = useState("");
 
   const handleChange = (event: SelectChangeEvent) => {
-    setUFs(event.target.value as string);
+    setUF(event.target.value as string);
+  };
+
+  const schema = yup.object().shape({
+    numeroDocumento: yup.string().required(""),
+    tipoDocumento: yup.string().required(""),
+    nome: yup.string().required(""),
+    logradouro: yup.string().required(""),
+    numero: yup.string().required(""),
+    bairro: yup.string().required(""),
+    cidade: yup.string().required(""),
+    uf: yup.string().required(""),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmitFunction = (data: any) => {
+    console.log(data);
   };
 
   return (
-    <FormLayout heading="Cliente">
+    <FormLayout heading="Cliente" onSubmit={handleSubmit(onSubmitFunction)}>
       <TextField
         id="outlined-basic"
         label="Número do Documento"
         variant="outlined"
         fullWidth
+        {...register("numeroDocumento")}
+        error={errors.numeroDocumento?.message ? true : false}
       />
       <TextField
         id="outlined-basic"
@@ -30,6 +58,8 @@ const FormClient = () => {
         variant="outlined"
         margin="normal"
         fullWidth
+        {...register("tipoDocumento")}
+        error={errors.tipoDocumento?.message ? true : false}
       />
       <TextField
         id="outlined-basic"
@@ -37,6 +67,8 @@ const FormClient = () => {
         variant="outlined"
         margin="dense"
         fullWidth
+        {...register("nome")}
+        error={errors.nome?.message ? true : false}
       />
       <TextField
         id="outlined-basic"
@@ -44,6 +76,8 @@ const FormClient = () => {
         variant="outlined"
         margin="normal"
         fullWidth
+        {...register("logradouro")}
+        error={errors.logradouro?.message ? true : false}
       />
       <TextField
         id="outlined-basic"
@@ -51,6 +85,8 @@ const FormClient = () => {
         variant="outlined"
         margin="dense"
         fullWidth
+        {...register("numero")}
+        error={errors.numero?.message ? true : false}
       />
       <TextField
         id="outlined-basic"
@@ -58,6 +94,8 @@ const FormClient = () => {
         variant="outlined"
         margin="normal"
         fullWidth
+        {...register("bairro")}
+        error={errors.bairro?.message ? true : false}
       />
       <TextField
         id="outlined-basic"
@@ -65,43 +103,47 @@ const FormClient = () => {
         variant="outlined"
         margin="dense"
         fullWidth
+        {...register("cidade")}
+        error={errors.cidade?.message ? true : false}
       />
       <FormControl margin="normal" fullWidth>
         <InputLabel id="demo-simple-select-label">UF</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={UFs}
+          value={UF}
           label="UF"
+          {...register("uf")}
           onChange={handleChange}
+          error={errors.uf?.message ? true : false}
         >
-          <MenuItem value="Acre">AC</MenuItem>
-          <MenuItem value="Alagoas">AL</MenuItem>
-          <MenuItem value="Amapá">AP</MenuItem>
-          <MenuItem value="Amazonas">AM</MenuItem>
-          <MenuItem value="Bahia">BA</MenuItem>
-          <MenuItem value="Ceará">CE</MenuItem>
-          <MenuItem value="Distrito Federal">DF</MenuItem>
-          <MenuItem value="Espírito Santo">ES</MenuItem>
-          <MenuItem value="Goiás">GO</MenuItem>
-          <MenuItem value="Maranhão">MA</MenuItem>
-          <MenuItem value="Mato Grosso">MT</MenuItem>
-          <MenuItem value="Mato Grosso do Sul">MS</MenuItem>
-          <MenuItem value="Minas Gerais">MG</MenuItem>
-          <MenuItem value="Pará">PA</MenuItem>
-          <MenuItem value="Paraíba">PB</MenuItem>
-          <MenuItem value="Paraná">PR</MenuItem>
-          <MenuItem value="Pernambuco">PE</MenuItem>
-          <MenuItem value="Piauí">PI</MenuItem>
-          <MenuItem value="Rio de Janeiro">RJ</MenuItem>
-          <MenuItem value="Rio Grande do Norte">RN</MenuItem>
-          <MenuItem value="Rio Grande do Sul">RS</MenuItem>
-          <MenuItem value="Rondônia">RO</MenuItem>
-          <MenuItem value="Roraima">RR</MenuItem>
-          <MenuItem value="Santa Catarina">SC</MenuItem>
-          <MenuItem value="São Paulo">SP</MenuItem>
-          <MenuItem value="Sergipe">SE</MenuItem>
-          <MenuItem value="Tocantins">TO</MenuItem>
+          <MenuItem value="AC">AC</MenuItem>
+          <MenuItem value="AL">AL</MenuItem>
+          <MenuItem value="AP">AP</MenuItem>
+          <MenuItem value="AM">AM</MenuItem>
+          <MenuItem value="BA">BA</MenuItem>
+          <MenuItem value="CE">CE</MenuItem>
+          <MenuItem value="DF">DF</MenuItem>
+          <MenuItem value="ES">ES</MenuItem>
+          <MenuItem value="GO">GO</MenuItem>
+          <MenuItem value="MA">MA</MenuItem>
+          <MenuItem value="MT">MT</MenuItem>
+          <MenuItem value="MS">MS</MenuItem>
+          <MenuItem value="MG">MG</MenuItem>
+          <MenuItem value="PA">PA</MenuItem>
+          <MenuItem value="PB">PB</MenuItem>
+          <MenuItem value="PR">PR</MenuItem>
+          <MenuItem value="PE">PE</MenuItem>
+          <MenuItem value="PI">PI</MenuItem>
+          <MenuItem value="RJ">RJ</MenuItem>
+          <MenuItem value="RN">RN</MenuItem>
+          <MenuItem value="RS">RS</MenuItem>
+          <MenuItem value="RO">RO</MenuItem>
+          <MenuItem value="RR">RR</MenuItem>
+          <MenuItem value="SC">SC</MenuItem>
+          <MenuItem value="SP">SP</MenuItem>
+          <MenuItem value="SE">SE</MenuItem>
+          <MenuItem value="TO">TO</MenuItem>
         </Select>
       </FormControl>
     </FormLayout>
