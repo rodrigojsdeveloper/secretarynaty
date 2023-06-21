@@ -1,31 +1,40 @@
 import { TextField } from "@mui/material";
 import { FormLayout } from "./FormLayout";
 
-const FormConductor = () => {
+const FormVehicle = () => {
   return (
-    <FormLayout heading="Condutor">
+    <FormLayout heading="Veículo">
       <TextField
         id="outlined-basic"
-        label="Nome"
+        label="Placa"
         variant="outlined"
         fullWidth
       />
       <TextField
         id="outlined-basic"
-        label="Número da Habilitação"
+        label="Marca do Modelo"
         variant="outlined"
         margin="normal"
         fullWidth
       />
       <TextField
         id="outlined-basic"
-        label="Categoria da Habilitação"
+        label="Ano de Fabricação"
         variant="outlined"
         margin="dense"
+        type="number"
+        fullWidth
+      />
+      <TextField
+        id="outlined-basic"
+        label="KM Atual"
+        variant="outlined"
+        margin="normal"
+        type="number"
         fullWidth
       />
     </FormLayout>
   );
 };
 
-export { FormConductor };
+export { FormVehicle };
