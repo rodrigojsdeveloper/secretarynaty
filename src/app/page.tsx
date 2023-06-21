@@ -1,7 +1,7 @@
 "use client"
 import { styled } from '@mui/system';
 import Button from '@mui/material/Button';
-import { Form } from '@/components/Form';
+import { FormClient } from '@/components/Forms/FormClient';
 
 const Container = styled('div')({
   
@@ -30,7 +30,7 @@ const Text = styled('p')({
 export default function Home() {
   return (
     <Container>
-      <Form></Form>
+      <FormClient />
     </Container>
   );
 }

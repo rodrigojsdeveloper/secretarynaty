@@ -1,4 +1,5 @@
 import {
+  Button,
   FormControl,
   InputLabel,
   MenuItem,
@@ -6,10 +7,10 @@ import {
   SelectChangeEvent,
   TextField,
 } from "@mui/material";
-import { Container } from "./style";
 import React from "react";
+import { FormLayout } from "./FormLayout";
 
-const Form = () => {
+const FormClient = () => {
   const [UFs, setUFs] = React.useState("");
 
   const handleChange = (event: SelectChangeEvent) => {
@@ -17,22 +18,49 @@ const Form = () => {
   };
 
   return (
-    <Container>
+    <FormLayout heading="Cliente">
       <TextField
         id="outlined-basic"
         label="Número do Documento"
         variant="outlined"
+        fullWidth
       />
       <TextField
         id="outlined-basic"
         label="Tipo do Documento"
         variant="outlined"
+        fullWidth
       />
-      <TextField id="outlined-basic" label="Nome" variant="outlined" />
-      <TextField id="outlined-basic" label="Logradouro" variant="outlined" />
-      <TextField id="outlined-basic" label="Número" variant="outlined" />
-      <TextField id="outlined-basic" label="Bairro" variant="outlined" />
-      <TextField id="outlined-basic" label="Cidade" variant="outlined" />
+      <TextField
+        id="outlined-basic"
+        label="Nome"
+        variant="outlined"
+        fullWidth
+      />
+      <TextField
+        id="outlined-basic"
+        label="Logradouro"
+        variant="outlined"
+        fullWidth
+      />
+      <TextField
+        id="outlined-basic"
+        label="Número"
+        variant="outlined"
+        fullWidth
+      />
+      <TextField
+        id="outlined-basic"
+        label="Bairro"
+        variant="outlined"
+        fullWidth
+      />
+      <TextField
+        id="outlined-basic"
+        label="Cidade"
+        variant="outlined"
+        fullWidth
+      />
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">UF</InputLabel>
         <Select
@@ -71,8 +99,12 @@ const Form = () => {
           <MenuItem value="Tocantins">TO</MenuItem>
         </Select>
       </FormControl>
-    </Container>
+
+      <Button fullWidth size="large" variant="contained">
+        Cadastrar
+      </Button>
+    </FormLayout>
   );
 };
 
-export { Form };
+export { FormClient };
