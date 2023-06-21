@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import { Container, Heading } from "./style";
 
 interface IFormLayout {
@@ -10,6 +11,9 @@ const FormLayout = ({ heading, children }: IFormLayout) => {
     <Container>
       <Heading>{heading}</Heading>
       {children}
+      <Button fullWidth size="large" variant="contained">
+        Cadastrar
+      </Button>
     </Container>
   );
 };

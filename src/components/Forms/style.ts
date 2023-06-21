@@ -3,13 +3,12 @@ import { styled } from "@mui/system";
 const Container = styled("form")({
   display: "flex",
   flexDirection: "column",
-  justifyContent: "space-between",
+  justifyContent: "center",
   alignItems: "center",
   width: "100%",
   maxWidth: "350px",
   padding: "25px 25px 30px 25px",
   borderRadius: "4px",
-  height: "630px",
   border: "1px solid rgba(0, 0, 0, 0.23)",
 });
 

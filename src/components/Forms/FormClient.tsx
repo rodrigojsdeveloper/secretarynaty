@@ -1,5 +1,4 @@
 import {
-  Button,
   FormControl,
   InputLabel,
   MenuItem,
@@ -29,39 +28,45 @@ const FormClient = () => {
         id="outlined-basic"
         label="Tipo do Documento"
         variant="outlined"
+        margin="normal"
         fullWidth
       />
       <TextField
         id="outlined-basic"
         label="Nome"
         variant="outlined"
+        margin="dense"
         fullWidth
       />
       <TextField
         id="outlined-basic"
         label="Logradouro"
         variant="outlined"
+        margin="normal"
         fullWidth
       />
       <TextField
         id="outlined-basic"
         label="Número"
         variant="outlined"
+        margin="dense"
         fullWidth
       />
       <TextField
         id="outlined-basic"
         label="Bairro"
         variant="outlined"
+        margin="normal"
         fullWidth
       />
       <TextField
         id="outlined-basic"
         label="Cidade"
         variant="outlined"
+        margin="dense"
         fullWidth
       />
-      <FormControl fullWidth>
+      <FormControl margin="normal" fullWidth>
         <InputLabel id="demo-simple-select-label">UF</InputLabel>
         <Select
           labelId="demo-simple-select-label"
@@ -99,10 +104,6 @@ const FormClient = () => {
           <MenuItem value="Tocantins">TO</MenuItem>
         </Select>
       </FormControl>
-
-      <Button fullWidth size="large" variant="contained">
-        Cadastrar
-      </Button>
     </FormLayout>
   );
 };
