@@ -1,3 +1,9 @@
+import { yupResolver } from "@hookform/resolvers/yup";
+import { FormLayout } from "./FormLayout";
+import { useForm } from "react-hook-form";
+import React, { useState } from "react";
+import { api } from "@/services/api";
+import * as yup from "yup";
 import {
   FormControl,
   InputLabel,
@@ -6,11 +12,6 @@ import {
   SelectChangeEvent,
   TextField,
 } from "@mui/material";
-import React, { useState } from "react";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { FormLayout } from "./FormLayout";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
 
 const FormClient = () => {
   const [UF, setUF] = useState("");
@@ -39,7 +40,12 @@ const FormClient = () => {
   });
 
   const onSubmitFunction = (data: any) => {
-    console.log(data);
+    api
+      .post("Cliente", data)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => console.error(error));
   };
 
   return (

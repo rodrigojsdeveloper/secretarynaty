@@ -7,8 +7,16 @@ import { FormDisplacement } from "@/components/Forms/FormDisplacement";
 import { CardLayout } from "@/components/Cards/CardLayout";
 import { CardVehicle } from "@/components/Cards/CardVehicle";
 import { ListLayout } from "@/components/Lists/ListLayout";
+import { ListClients } from "@/components/Lists/ListClients";
+import { Providers } from "@/contexts";
 
-const Container = styled("div")({});
+const Container = styled("div")({
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "start",
+  padding: "10px 20px",
+});
 
 const Heading = styled("h1")({
   color: "black",
@@ -33,9 +41,10 @@ const Text = styled("p")({
 export default function Home() {
   return (
     <Container>
-      <ListLayout heading="o">
-        
-      </ListLayout>
+      <Providers>
+        <FormClient />
+        <ListClients />
+      </Providers>
     </Container>
   );
 }

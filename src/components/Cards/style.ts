@@ -9,6 +9,7 @@ const Container = styled("div")({
   borderRadius: "4px",
   padding: "20px 30px",
   boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+  margin: "0px 5px 15px 5px",
 });
 
 const Content = styled("div")({
@@ -17,7 +18,7 @@ const Content = styled("div")({
   flexDirection: "row",
   justifyContent: "space-around",
   alignItems: "center",
-  marginTop: "10px"
+  marginTop: "10px",
 });
 
 const Text = styled("div")({
