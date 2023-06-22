@@ -46,7 +46,7 @@ const CardClient = ({ client }: IClient) => {
           id={Number(clientId)}
         >
           <Text>
-            Número do Documento: <Result>{client.numeroDocumento}</Result>
+            N. do Documento: <Result>{client.numeroDocumento}</Result>
           </Text>
           <Text>
             Tipo do Documento: <Result>{client.tipoDocumento}</Result>
@@ -74,6 +74,7 @@ const CardClient = ({ client }: IClient) => {
             variant="outlined"
             onClick={() => setShowModalEdit(true)}
             fullWidth
+            size="small"
           >
             Editar
           </Button>

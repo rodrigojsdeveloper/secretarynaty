@@ -6,7 +6,7 @@ const Container = styled("div")({
   justifyContent: "center",
   alignItems: "center",
   width: "100%",
-  maxWidth: "700px",
+  maxWidth: "860px",
 });
 
 const Heading = styled("h2")({
@@ -21,7 +21,7 @@ const Content = styled("menu")({
   height: "600px",
   display: "flex",
   flexDirection: "row",
-  justifyContent: "space-between",
+  justifyContent: "start",
   flexFlow: "wrap",
   border: "1px solid rgba(0, 0, 0, 0.23)",
   borderRadius: "4px",

@@ -30,7 +30,7 @@ const CardLayout = ({
       ) : null}
 
       <Container>
-        <Image alt={alt} src={src} width={200} />
+        <Image alt={alt} src={src} width={100} height={100} style={{ objectFit: "cover" }} />
         {children}
         <Content>
           <Button
@@ -38,6 +38,7 @@ const CardLayout = ({
             color="error"
             onClick={() => setShowModalDelete(true)}
             fullWidth
+            size="small"
           >
             Deletar
           </Button>

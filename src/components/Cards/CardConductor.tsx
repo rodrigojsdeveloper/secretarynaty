@@ -63,6 +63,7 @@ const CardConductor = ({ conductor }: IConductor) => {
             variant="outlined"
             onClick={() => setShowModalEdit(true)}
             fullWidth
+            size="small"
           >
             Editar
           </Button>

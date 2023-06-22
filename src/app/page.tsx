@@ -46,8 +46,8 @@ const Text = styled("p")({
 export default function Home() {
   return (
     <Container>
-      <FormClient />
-      <ListClients />
+      <FormConductor />
+      <ListConductors />
     </Container>
   );
 }

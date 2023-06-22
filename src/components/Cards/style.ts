@@ -2,14 +2,15 @@ import { styled } from "@mui/system";
 
 const Container = styled("div")({
   width: "100%",
-  maxWidth: "250px",
+  maxWidth: "220px",
+  height: "min-content",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   borderRadius: "4px",
-  padding: "20px 30px",
+  padding: "20px",
   boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-  margin: "0px 5px 15px 5px",
+  margin: "0px 10px 15px 10px",
 });
 
 const Content = styled("div")({
@@ -27,9 +28,9 @@ const Text = styled("div")({
   flexDirection: "row",
   justifyContent: "space-between",
   alignItems: "center",
-  fontSize: "15px",
+  fontSize: "12px",
   fontWeight: "600",
-  lineHeight: "15px",
+  margin: "0",
 });
 
 const Result = styled("p")({

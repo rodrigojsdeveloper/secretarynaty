@@ -52,7 +52,7 @@ const CardVehicle = ({ vehicle }: IVehicle) => {
             Marca Modelo: <Result>{vehicle.marcaModelo}</Result>
           </Text>
           <Text>
-            Ano de Fabricação: <Result>{vehicle.anoFabricacao}</Result>
+            Ano de Fab: <Result>{vehicle.anoFabricacao}</Result>
           </Text>
           <Text>
             KM Atual: <Result>{vehicle.kmAtual}</Result>
@@ -62,6 +62,7 @@ const CardVehicle = ({ vehicle }: IVehicle) => {
             variant="outlined"
             onClick={() => setShowModalEdit(true)}
             fullWidth
+            size="small"
           >
             Editar
           </Button>

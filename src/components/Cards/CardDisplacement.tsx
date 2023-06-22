@@ -50,7 +50,7 @@ const CardDisplacement = ({ displacement }: IDisplacement) => {
             KM Inicial: <Result>{displacement.kmInicial}</Result>
           </Text>
           <Text>
-            In. do Deslocamento:{" "}
+            Inicio do Des:{" "}
             <Result>
               {formattedDate(String(displacement.inicioDeslocamento))}
             </Result>
@@ -78,6 +78,7 @@ const CardDisplacement = ({ displacement }: IDisplacement) => {
             variant="outlined"
             onClick={() => setShowModalEdit(true)}
             fullWidth
+            size="small"
           >
             Editar
           </Button>
