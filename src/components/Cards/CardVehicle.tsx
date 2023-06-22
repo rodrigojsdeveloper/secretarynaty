@@ -1,19 +1,9 @@
 import { CardLayout } from "./CardLayout";
+import { IVehicle } from "@/interfaces";
 import car from "../../assets/car.png";
 import { Result, Text } from "./style";
 
-interface IVehicle {
-  placa: string;
-  marcaModelo: string;
-  anoFabricacao: number;
-  kmAtual: number;
-}
-
-interface IVehicleComponent {
-  vehicle: IVehicle;
-}
-
-const CardVehicle = ({ vehicle }: IVehicleComponent) => {
+const CardVehicle = ({ vehicle }: IVehicle) => {
   return (
     <CardLayout alt="Car" src={car}>
       <Text>
