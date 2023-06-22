@@ -1,9 +1,9 @@
 import { IDisplacementProps } from "../interfaces";
 import { createContext, useState } from "react";
+import { api } from "@/services/api";
 
 interface IDisplacementContextData {
   displacements: Array<IDisplacementProps>;
-  handleDisplacements: (displacement: IDisplacementProps) => void;
 }
 
 interface IDisplacementContextProvider {
@@ -21,14 +21,19 @@ export const DisplacementContextProvider = ({
     []
   );
 
-  const handleDisplacements = (displacement: IDisplacementProps) =>
-    setDisplacements([displacement, ...displacements]);
+  const loadingDisplacements = () => {
+    api
+      .get("Deslocamento")
+      .then((res) => setDisplacements(res.data.reverse()))
+      .catch((error) => console.error(error));
+  };
+
+  loadingDisplacements();
 
   return (
     <DisplacementContext.Provider
       value={{
         displacements,
-        handleDisplacements,
       }}
     >
       {children}

@@ -12,6 +12,7 @@ import { Providers } from "@/contexts";
 import { ListConductors } from "@/components/Lists/ListConductors";
 import { FormVehicle } from "@/components/Forms/FormVehicle";
 import { ListVehicles } from "@/components/Lists/ListVehicles";
+import { ListDisplacements } from "@/components/Lists/ListDisplacements";
 
 const Container = styled("div")({
   display: "flex",
@@ -45,8 +46,8 @@ export default function Home() {
   return (
     <Container>
       <Providers>
-        <FormVehicle />
-        <ListVehicles />
+        <FormDisplacement />
+        <ListDisplacements />
       </Providers>
     </Container>
   );

@@ -12,7 +12,7 @@ const ListDisplacements = () => {
       {displacements.map((displacement: IDisplacementProps) => (
         <CardDisplacement
           displacement={displacement}
-          key={displacement.idCliente}
+          key={displacement.kmInicial}
         />
       ))}
     </ListLayout>

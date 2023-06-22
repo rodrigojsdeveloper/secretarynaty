@@ -2,6 +2,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { TextField } from "@mui/material";
 import { FormLayout } from "./FormLayout";
 import { useForm } from "react-hook-form";
+import { api } from "@/services/api";
 import * as yup from "yup";
 
 const FormDisplacement = () => {
@@ -24,7 +25,10 @@ const FormDisplacement = () => {
   });
 
   const onSubmitFunction = (data: any) => {
-    console.log(data);
+    api
+      .post("Deslocamento/IniciarDeslocamento", data)
+      .then((res) => console.log(res))
+      .catch((error) => console.error(error));
   };
 
   return (

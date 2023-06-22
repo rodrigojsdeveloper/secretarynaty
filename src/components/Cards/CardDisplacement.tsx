@@ -1,3 +1,4 @@
+import { formattedDate } from "@/utils/formattedDate";
 import maps from "../../assets/displacement.png";
 import { IDisplacement } from "@/interfaces";
 import { CardLayout } from "./CardLayout";
@@ -10,8 +11,10 @@ const CardDisplacement = ({ displacement }: IDisplacement) => {
         KM Inicial: <Result>{displacement.kmInicial}</Result>
       </Text>
       <Text>
-        Inicio do Deslocamento:{" "}
-        <Result>{displacement.inicioDeslocamento}</Result>
+        In. do Deslocamento:{" "}
+        <Result>
+          {formattedDate(String(displacement.inicioDeslocamento))}
+        </Result>
       </Text>
       <Text>
         Check List: <Result>{displacement.checkList}</Result>
