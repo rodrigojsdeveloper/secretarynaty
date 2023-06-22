@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, FormEventHandler, SetStateAction } from "react";
 import { StaticImageData } from "next/image";
 
 export interface ICardLayout {
@@ -66,6 +66,11 @@ export interface IDisplacement {
   displacement: IDisplacementProps;
 }
 
+export interface IFormLayout {
+  heading: string;
+  children: React.ReactNode;
+  onSubmit?: FormEventHandler<HTMLFormElement>;
+}
 export interface IModalBackground {
   children: React.ReactNode;
 }
@@ -75,4 +80,15 @@ export interface IModalDelete {
   parameter: string;
   id: number;
   setShowModalDelete: Dispatch<SetStateAction<boolean>>;
+}
+
+export interface IModalEditLayout {
+  heading: string;
+  parameter: string;
+  parameterDisplacement?: string;
+  id: number;
+  setShowModalEdit: Dispatch<SetStateAction<boolean>>;
+  data: object;
+  children: React.ReactNode;
+  onSubmit?: FormEventHandler<HTMLFormElement>;
 }

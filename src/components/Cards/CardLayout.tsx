@@ -27,22 +27,22 @@ const CardLayout = ({
             setShowModalDelete={setShowModalDelete}
           />
         </ModalBackground>
-      ) : (
-        <Container>
-          <Image alt={alt} src={src} width={200} />
-          {children}
-          <Content>
-            <Button
-              variant="outlined"
-              color="error"
-              onClick={() => setShowModalDelete(true)}
-            >
-              Deletar
-            </Button>
-            <Button variant="outlined">Editar</Button>
-          </Content>
-        </Container>
-      )}
+      ) : null}
+
+      <Container>
+        <Image alt={alt} src={src} width={200} />
+        {children}
+        <Content>
+          <Button
+            variant="outlined"
+            color="error"
+            onClick={() => setShowModalDelete(true)}
+          >
+            Deletar
+          </Button>
+          <Button variant="outlined">Editar</Button>
+        </Content>
+      </Container>
     </>
   );
 };

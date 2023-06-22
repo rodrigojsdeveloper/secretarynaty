@@ -1,12 +1,6 @@
 import { Container, Heading } from "./style";
-import { FormEventHandler } from "react";
+import { IFormLayout } from "@/interfaces";
 import { Button } from "@mui/material";
-
-interface IFormLayout {
-  heading: string;
-  children: React.ReactNode;
-  onSubmit?: FormEventHandler<HTMLFormElement>;
-}
 
 const FormLayout = ({ heading, children, onSubmit }: IFormLayout) => {
   return (
