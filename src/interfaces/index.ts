@@ -1,3 +1,15 @@
+import { Dispatch, SetStateAction } from "react";
+import { StaticImageData } from "next/image";
+
+export interface ICardLayout {
+  alt: string;
+  src: StaticImageData;
+  children: React.ReactNode;
+  heading: string;
+  parameter: string;
+  id: number;
+}
+
 export interface IVehicleProps {
   id: number;
   placa: string;
@@ -56,4 +68,11 @@ export interface IDisplacement {
 
 export interface IModalBackground {
   children: React.ReactNode;
+}
+
+export interface IModalDelete {
+  heading: string;
+  parameter: string;
+  id: number;
+  setShowModalDelete: Dispatch<SetStateAction<boolean>>;
 }

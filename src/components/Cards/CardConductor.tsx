@@ -1,12 +1,23 @@
 import { formattedDate } from "@/utils/formattedDate";
+import { useParams } from "react-router-dom";
 import { IConductor } from "@/interfaces";
 import { CardLayout } from "./CardLayout";
 import user from "../../assets/user.png";
 import { Result, Text } from "./style";
 
 const CardConductor = ({ conductor }: IConductor) => {
+  let { conductorId } = useParams();
+
+  conductorId = String(conductor.id);
+
   return (
-    <CardLayout alt="User" src={user}>
+    <CardLayout
+      alt="User"
+      src={user}
+      heading="Condutor"
+      parameter="Condutor"
+      id={Number(conductorId)}
+    >
       <Text>
         Nome: <Result>{conductor.nome}</Result>
       </Text>

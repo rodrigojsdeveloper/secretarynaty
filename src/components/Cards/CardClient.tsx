@@ -1,11 +1,22 @@
+import { useParams } from "react-router-dom";
 import { CardLayout } from "./CardLayout";
 import user from "../../assets/user.png";
 import { Result, Text } from "./style";
 import { IClient } from "@/interfaces";
 
 const CardClient = ({ client }: IClient) => {
+  let { clientId } = useParams();
+
+  clientId = String(client.id);
+
   return (
-    <CardLayout alt="User" src={user}>
+    <CardLayout
+      alt="User"
+      src={user}
+      heading="Cliente"
+      parameter="Cliente"
+      id={Number(clientId)}
+    >
       <Text>
         Número do Documento: <Result>{client.numeroDocumento}</Result>
       </Text>

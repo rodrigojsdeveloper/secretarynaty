@@ -1,11 +1,22 @@
+import { useParams } from "react-router-dom";
 import { CardLayout } from "./CardLayout";
 import { IVehicle } from "@/interfaces";
 import car from "../../assets/car.png";
 import { Result, Text } from "./style";
 
 const CardVehicle = ({ vehicle }: IVehicle) => {
+  let { vehicleId } = useParams();
+
+  vehicleId = String(vehicle.id);
+
   return (
-    <CardLayout alt="Car" src={car}>
+    <CardLayout
+      alt="Car"
+      src={car}
+      heading="Veículo"
+      parameter="Veiculo"
+      id={Number(vehicleId)}
+    >
       <Text>
         Placa: <Result>{vehicle.placa}</Result>
       </Text>

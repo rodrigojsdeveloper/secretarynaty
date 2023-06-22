@@ -12,7 +12,8 @@ import { ListConductors } from "@/components/Lists/ListConductors";
 import { FormVehicle } from "@/components/Forms/FormVehicle";
 import { ListVehicles } from "@/components/Lists/ListVehicles";
 import { ListDisplacements } from "@/components/Lists/ListDisplacements";
-import { ModalBackground } from "@/components/BackgroundModal";
+import { ModalBackground } from "@/components/ModalBackground";
+import { ModalDelete } from "@/components/ModalDelete";
 
 const Container = styled("div")({
   display: "flex",
