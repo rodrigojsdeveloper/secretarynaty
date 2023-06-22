@@ -53,3 +53,7 @@ export interface IConductor {
 export interface IDisplacement {
   displacement: IDisplacementProps;
 }
+
+export interface IModalBackground {
+  children: React.ReactNode;
+}
