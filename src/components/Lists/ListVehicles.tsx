@@ -4,7 +4,7 @@ import { IVehicleProps } from "@/interfaces";
 import { ListLayout } from "./ListLayout";
 import { useContext } from "react";
 
-const ListVehicle = () => {
+const ListVehicles = () => {
   const { vehicles } = useContext(VehicleContext);
 
   return (
@@ -16,4 +16,4 @@ const ListVehicle = () => {
   );
 };
 
-export { ListVehicle };
+export { ListVehicles };

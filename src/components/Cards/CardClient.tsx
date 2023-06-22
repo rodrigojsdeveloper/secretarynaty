@@ -1,23 +1,9 @@
 import { CardLayout } from "./CardLayout";
 import user from "../../assets/user.png";
 import { Result, Text } from "./style";
+import { IClient } from "@/interfaces";
 
-interface IClient {
-  numeroDocumento: string;
-  tipoDocumento: string;
-  nome: string;
-  logradouro: string;
-  numero: string;
-  bairro: string;
-  cidade: string;
-  uf: string;
-}
-
-interface IClientComponent {
-  client: IClient;
-}
-
-const CardClient = ({ client }: IClientComponent) => {
+const CardClient = ({ client }: IClient) => {
   return (
     <CardLayout alt="User" src={user}>
       <Text>
