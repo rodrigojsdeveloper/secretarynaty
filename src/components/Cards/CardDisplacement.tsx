@@ -1,23 +1,9 @@
 import maps from "../../assets/displacement.png";
+import { IDisplacement } from "@/interfaces";
 import { CardLayout } from "./CardLayout";
 import { Result, Text } from "./style";
 
-interface IDisplacement {
-  kmInicial: number;
-  inicioDeslocamento: string;
-  checkList: string;
-  motivo: string;
-  observacao: string;
-  idCondutor: number;
-  idVeiculo: number;
-  idCliente: number;
-}
-
-interface IDisplacementComponent {
-  displacement: IDisplacement;
-}
-
-const CardDisplacement = ({ displacement }: IDisplacementComponent) => {
+const CardDisplacement = ({ displacement }: IDisplacement) => {
   return (
     <CardLayout alt="Maps" src={maps}>
       <Text>

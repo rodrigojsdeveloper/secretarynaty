@@ -34,3 +34,18 @@ export interface IConductorProps {
 export interface IConductor {
   conductor: IConductorProps;
 }
+
+export interface IDisplacementProps {
+  kmInicial: number;
+  inicioDeslocamento: string;
+  checkList: string;
+  motivo: string;
+  observacao: string;
+  idCondutor: number;
+  idVeiculo: number;
+  idCliente: number;
+}
+
+export interface IDisplacement {
+  displacement: IDisplacementProps;
+}

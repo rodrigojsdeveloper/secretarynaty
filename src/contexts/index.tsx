@@ -1,3 +1,4 @@
+import { DisplacementContextProvider } from "./DisplacementContext";
 import { ConductorContextProvider } from "./ConductorContext";
 import { VehicleContextProvider } from "./VehicleContext";
 import { ClientContextProvider } from "./ClientContext";
@@ -10,7 +11,9 @@ const Providers = ({ children }: IProviders) => {
   return (
     <VehicleContextProvider>
       <ClientContextProvider>
-        <ConductorContextProvider>{children}</ConductorContextProvider>
+        <ConductorContextProvider>
+          <DisplacementContextProvider>{children}</DisplacementContextProvider>
+        </ConductorContextProvider>
       </ClientContextProvider>
     </VehicleContextProvider>
   );

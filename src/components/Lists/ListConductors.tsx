@@ -8,7 +8,7 @@ const ListConductors = () => {
   const { conductors } = useContext(ConductorContext);
 
   return (
-    <ListLayout heading="Clientes cadastrados">
+    <ListLayout heading="Condutores cadastrados">
       {conductors.map((conductor: IConductorProps) => (
         <CardConductor conductor={conductor} key={conductor.nome} />
       ))}
