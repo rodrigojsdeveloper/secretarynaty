@@ -1,5 +1,5 @@
+import maps from "../../assets/displacement.png";
 import { CardLayout } from "./CardLayout";
-import user from "../../assets/user.png";
 import { Result, Text } from "./style";
 
 interface IDisplacement {
@@ -19,7 +19,7 @@ interface IDisplacementComponent {
 
 const CardDisplacement = ({ displacement }: IDisplacementComponent) => {
   return (
-    <CardLayout alt="User" src={user}>
+    <CardLayout alt="Maps" src={maps}>
       <Text>
         KM Inicial: <Result>{displacement.kmInicial}</Result>
       </Text>

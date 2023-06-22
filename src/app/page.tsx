@@ -6,6 +6,7 @@ import { FormConductor } from "@/components/Forms/FormConductor";
 import { FormDisplacement } from "@/components/Forms/FormDisplacement";
 import { CardLayout } from "@/components/Cards/CardLayout";
 import { CardVehicle } from "@/components/Cards/CardVehicle";
+import { ListLayout } from "@/components/Lists/ListLayout";
 
 const Container = styled("div")({});
 
@@ -32,7 +33,9 @@ const Text = styled("p")({
 export default function Home() {
   return (
     <Container>
-      <CardVehicle />
+      <ListLayout heading="o">
+        
+      </ListLayout>
     </Container>
   );
 }
