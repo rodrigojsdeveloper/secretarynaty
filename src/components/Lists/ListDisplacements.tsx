@@ -1,19 +1,27 @@
-import { DisplacementContext } from "@/contexts/DisplacementContext";
 import { CardDisplacement } from "../Cards/CardDisplacement";
 import { IDisplacementProps } from "@/interfaces";
 import { ListLayout } from "./ListLayout";
-import { useContext } from "react";
+import { api } from "@/services/api";
+import { useState } from "react";
 
 const ListDisplacements = () => {
-  const { displacements } = useContext(DisplacementContext);
+  const [displacements, setDisplacements] = useState<Array<IDisplacementProps>>(
+    []
+  );
+
+  const loadingDisplacements = () => {
+    api
+      .get("Deslocamento")
+      .then((res) => setDisplacements(res.data.reverse()))
+      .catch((error) => console.error(error));
+  };
+
+  loadingDisplacements();
 
   return (
     <ListLayout heading="Deslocamentos cadastrados">
       {displacements.map((displacement: IDisplacementProps) => (
-        <CardDisplacement
-          displacement={displacement}
-          key={displacement.kmInicial}
-        />
+        <CardDisplacement displacement={displacement} key={displacement.id} />
       ))}
     </ListLayout>
   );

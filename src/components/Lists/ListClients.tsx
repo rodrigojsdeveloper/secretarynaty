@@ -1,16 +1,25 @@
-import { ClientContext } from "@/contexts/ClientContext";
 import { CardClient } from "../Cards/CardClient";
 import { IClientProps } from "@/interfaces";
 import { ListLayout } from "./ListLayout";
-import { useContext } from "react";
+import { api } from "@/services/api";
+import { useState } from "react";
 
 const ListClients = () => {
-  const { clients } = useContext(ClientContext);
+  const [clients, setClients] = useState<Array<IClientProps>>([]);
+
+  const loadingClients = () => {
+    api
+      .get("Cliente")
+      .then((res) => setClients(res.data.reverse()))
+      .catch((error) => console.error(error));
+  };
+
+  loadingClients();
 
   return (
     <ListLayout heading="Clientes cadastrados">
       {clients.map((client: IClientProps) => (
-        <CardClient client={client} key={client.nome} />
+        <CardClient client={client} key={client.id} />
       ))}
     </ListLayout>
   );

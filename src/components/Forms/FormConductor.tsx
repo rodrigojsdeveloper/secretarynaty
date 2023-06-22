@@ -23,7 +23,7 @@ const FormConductor = () => {
   const onSubmitFunction = (data: any) => {
     api
       .post("Condutor", data)
-      .then((res) => console.log(res))
+      .then((_) => {})
       .catch((error) => console.error(error));
   };
 

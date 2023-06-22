@@ -8,7 +8,6 @@ import { CardLayout } from "@/components/Cards/CardLayout";
 import { CardVehicle } from "@/components/Cards/CardVehicle";
 import { ListLayout } from "@/components/Lists/ListLayout";
 import { ListClients } from "@/components/Lists/ListClients";
-import { Providers } from "@/contexts";
 import { ListConductors } from "@/components/Lists/ListConductors";
 import { FormVehicle } from "@/components/Forms/FormVehicle";
 import { ListVehicles } from "@/components/Lists/ListVehicles";
@@ -45,10 +44,8 @@ const Text = styled("p")({
 export default function Home() {
   return (
     <Container>
-      <Providers>
-        <FormDisplacement />
-        <ListDisplacements />
-      </Providers>
+      <FormConductor />
+      <ListConductors />
     </Container>
   );
 }

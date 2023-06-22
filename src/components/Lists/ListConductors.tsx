@@ -1,16 +1,25 @@
-import { ConductorContext } from "@/contexts/ConductorContext";
 import { CardConductor } from "../Cards/CardConductor";
 import { IConductorProps } from "@/interfaces";
 import { ListLayout } from "./ListLayout";
-import { useContext } from "react";
+import { api } from "@/services/api";
+import { useState } from "react";
 
 const ListConductors = () => {
-  const { conductors } = useContext(ConductorContext);
+  const [conductors, setConductors] = useState<Array<IConductorProps>>([]);
+
+  const loadingConductors = () => {
+    api
+      .get("Condutor")
+      .then((res) => setConductors(res.data.reverse()))
+      .catch((error) => console.error(error));
+  };
+
+  loadingConductors();
 
   return (
     <ListLayout heading="Condutores cadastrados">
       {conductors.map((conductor: IConductorProps) => (
-        <CardConductor conductor={conductor} key={conductor.nome} />
+        <CardConductor conductor={conductor} key={conductor.id} />
       ))}
     </ListLayout>
   );

@@ -27,7 +27,7 @@ const FormDisplacement = () => {
   const onSubmitFunction = (data: any) => {
     api
       .post("Deslocamento/IniciarDeslocamento", data)
-      .then((res) => console.log(res))
+      .then((_) => {})
       .catch((error) => console.error(error));
   };
 

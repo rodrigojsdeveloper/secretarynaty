@@ -24,7 +24,7 @@ const FormVehicle = () => {
   const onSubmitFunction = (data: any) => {
     api
       .post("Veiculo", data)
-      .then((res) => console.log(res))
+      .then((_) => {})
       .catch((error) => console.error(error));
   };
 
