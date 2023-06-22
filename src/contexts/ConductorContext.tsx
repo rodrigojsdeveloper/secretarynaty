@@ -1,9 +1,9 @@
 import { createContext, useState } from "react";
 import { IConductorProps } from "../interfaces";
+import { api } from "@/services/api";
 
 interface IConductorContextData {
   conductors: Array<IConductorProps>;
-  handleConductors: (conductor: IConductorProps) => void;
 }
 
 interface IConductorContextProvider {
@@ -17,14 +17,19 @@ export const ConductorContextProvider = ({
 }: IConductorContextProvider) => {
   const [conductors, setConductors] = useState<Array<IConductorProps>>([]);
 
-  const handleConductors = (conductor: IConductorProps) =>
-    setConductors([conductor, ...conductors]);
+  const loadingConductors = () => {
+    api
+      .get("Condutor")
+      .then((res) => setConductors(res.data.reverse()))
+      .catch((error) => console.error(error));
+  };
+
+  loadingConductors();
 
   return (
     <ConductorContext.Provider
       value={{
         conductors,
-        handleConductors,
       }}
     >
       {children}

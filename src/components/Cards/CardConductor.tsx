@@ -4,21 +4,28 @@ import user from "../../assets/user.png";
 import { Result, Text } from "./style";
 
 const CardConductor = ({ conductor }: IConductor) => {
+  const dateObj = new Date(conductor.vencimentoHabilitacao);
+  const day = dateObj.getDate();
+  const month = dateObj.getMonth() + 1;
+  const year = dateObj.getFullYear();
+
+  const formattedDate = `${day < 10 ? "0" + day : day}/${
+    month < 10 ? "0" + month : month
+  }/${year}`;
+
   return (
     <CardLayout alt="User" src={user}>
       <Text>
         Nome: <Result>{conductor.nome}</Result>
       </Text>
       <Text>
-        Número da Habilitação: <Result>{conductor.numeroHabilitacao}</Result>
+        N. da Habilitação: <Result>{conductor.numeroHabilitacao}</Result>
       </Text>
       <Text>
-        Categoria da Habilitação:{" "}
-        <Result>{conductor.categoriaHabilitacao}</Result>
+        Cat. da Habilitação: <Result>{conductor.categoriaHabilitacao}</Result>
       </Text>
       <Text>
-        Vencimento da Habilitação:{" "}
-        <Result>{conductor.vencimentoHabilitacao}</Result>
+        Ven. da Habilitação: <Result>{formattedDate}</Result>
       </Text>
     </CardLayout>
   );

@@ -9,6 +9,7 @@ import { CardVehicle } from "@/components/Cards/CardVehicle";
 import { ListLayout } from "@/components/Lists/ListLayout";
 import { ListClients } from "@/components/Lists/ListClients";
 import { Providers } from "@/contexts";
+import { ListConductors } from "@/components/Lists/ListConductors";
 
 const Container = styled("div")({
   display: "flex",
@@ -42,8 +43,8 @@ export default function Home() {
   return (
     <Container>
       <Providers>
-        <FormClient />
-        <ListClients />
+        <FormConductor />
+        <ListConductors />
       </Providers>
     </Container>
   );

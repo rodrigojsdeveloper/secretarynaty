@@ -42,9 +42,7 @@ const FormClient = () => {
   const onSubmitFunction = (data: any) => {
     api
       .post("Cliente", data)
-      .then((res) => {
-        console.log(res);
-      })
+      .then((res) => console.log(res))
       .catch((error) => console.error(error));
   };
 

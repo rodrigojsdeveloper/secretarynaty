@@ -4,7 +4,6 @@ import { api } from "@/services/api";
 
 interface IClientContextData {
   clients: Array<IClientProps>;
-  loadingClients: (client: IClientProps) => void;
 }
 
 interface IClientContextProvider {
@@ -19,9 +18,7 @@ export const ClientContextProvider = ({ children }: IClientContextProvider) => {
   const loadingClients = () => {
     api
       .get("Cliente")
-      .then((res) => {
-        setClients(res.data.reverse());
-      })
+      .then((res) => setClients(res.data.reverse()))
       .catch((error) => console.error(error));
   };
 
@@ -31,7 +28,6 @@ export const ClientContextProvider = ({ children }: IClientContextProvider) => {
     <ClientContext.Provider
       value={{
         clients,
-        loadingClients,
       }}
     >
       {children}
