@@ -1,10 +1,11 @@
+import { VehicleContext } from "@/contexts/VehicleContext";
 import { CardVehicle } from "../Cards/CardVehicle";
-import { ListLayout } from "./ListLayout";
 import { IVehicleProps } from "@/interfaces";
-import { useState } from "react";
+import { ListLayout } from "./ListLayout";
+import { useContext } from "react";
 
 const ListVehicle = () => {
-  const [vehicles, setVehicles] = useState<Array<IVehicleProps>>([]);
+  const { vehicles } = useContext(VehicleContext);
 
   return (
     <ListLayout heading="Veículos cadastrados">
