@@ -1,11 +1,10 @@
+import Image, { StaticImageData } from "next/image";
 import { Container, Content } from "./style";
 import { Button } from "@mui/material";
-import car from "../../assets/car.png";
-import Image from "next/image";
 
 interface ICardLayout {
   alt: string;
-  src: string;
+  src: StaticImageData;
   children: React.ReactNode;
 }
 

@@ -5,6 +5,7 @@ import { FormClient } from "@/components/Forms/FormClient";
 import { FormConductor } from "@/components/Forms/FormConductor";
 import { FormDisplacement } from "@/components/Forms/FormDisplacement";
 import { CardLayout } from "@/components/Cards/CardLayout";
+import { CardVehicle } from "@/components/Cards/CardVehicle";
 
 const Container = styled("div")({});
 
@@ -31,7 +32,7 @@ const Text = styled("p")({
 export default function Home() {
   return (
     <Container>
-      <CardLayout />
+      <CardVehicle />
     </Container>
   );
 }

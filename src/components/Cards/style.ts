@@ -7,7 +7,7 @@ const Container = styled("div")({
   flexDirection: "column",
   alignItems: "center",
   borderRadius: "4px",
-  padding: "10px 10px 25px 10px",
+  padding: "20px 30px",
   boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
 });
 
@@ -17,6 +17,23 @@ const Content = styled("div")({
   flexDirection: "row",
   justifyContent: "space-around",
   alignItems: "center",
+  marginTop: "10px"
 });
 
-export { Container, Content };
+const Text = styled("div")({
+  width: "100%",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "center",
+  fontSize: "15px",
+  fontWeight: "600",
+  lineHeight: "15px",
+});
+
+const Result = styled("p")({
+  fontWeight: "500",
+  color: "gray",
+});
+
+export { Container, Content, Text, Result };
