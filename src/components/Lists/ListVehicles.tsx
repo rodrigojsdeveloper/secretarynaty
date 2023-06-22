@@ -10,7 +10,7 @@ const ListVehicles = () => {
   return (
     <ListLayout heading="Veículos cadastrados">
       {vehicles.map((vehicle: IVehicleProps) => (
-        <CardVehicle vehicle={vehicle} key={vehicle.anoFabricacao} />
+        <CardVehicle vehicle={vehicle} key={vehicle.placa} />
       ))}
     </ListLayout>
   );

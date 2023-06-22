@@ -2,6 +2,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { TextField } from "@mui/material";
 import { FormLayout } from "./FormLayout";
 import { useForm } from "react-hook-form";
+import { api } from "@/services/api";
 import * as yup from "yup";
 
 const FormVehicle = () => {
@@ -21,7 +22,10 @@ const FormVehicle = () => {
   });
 
   const onSubmitFunction = (data: any) => {
-    console.log(data);
+    api
+      .post("Veiculo", data)
+      .then((res) => console.log(res))
+      .catch((error) => console.error(error));
   };
 
   return (
