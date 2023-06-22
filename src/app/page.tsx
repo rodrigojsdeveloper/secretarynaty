@@ -20,7 +20,11 @@ const Container = styled("div")({
   flexDirection: "row",
   justifyContent: "space-between",
   alignItems: "start",
-  padding: "10px 20px",
+  padding: "10px 30px",
+  ["@media (max-width: 1024px)"]: {
+    flexDirection: "column",
+    alignItems: "center",
+  },
 });
 
 const Heading = styled("h1")({
@@ -47,7 +51,7 @@ export default function Home() {
   return (
     <Container>
       <FormConductor />
-      <ListConductors />
+      <ListVehicles />
     </Container>
   );
 }

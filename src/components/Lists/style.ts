@@ -6,7 +6,12 @@ const Container = styled("div")({
   justifyContent: "center",
   alignItems: "center",
   width: "100%",
-  maxWidth: "860px",
+  maxWidth: "820px",
+  marginLeft: "20px",
+  ["@media (max-width: 1024px)"]: {
+    marginLeft: "0px",
+    marginTop: "40px",
+  },
 });
 
 const Heading = styled("h2")({
@@ -27,6 +32,9 @@ const Content = styled("menu")({
   borderRadius: "4px",
   padding: "10px 5px",
   overflowY: "scroll",
+  ["@media (max-width: 886px)"]: {
+    justifyContent: "center",
+  },
 });
 
 export { Container, Heading, Content };

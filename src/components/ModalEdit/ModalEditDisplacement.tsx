@@ -33,6 +33,8 @@ const ModalEditDisplacement = ({ id, setShowModalEdit, data }: IModalEdit) => {
   const onSubmitFunction = (data: any) => {
     setLoading(true);
 
+    data.id = id;
+
     api
       .put(`Deslocamento/${id}/EncerrarDeslocamento`, data)
       .then((_) => setShowModalEdit(false))

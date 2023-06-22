@@ -10,6 +10,7 @@ const FormConductor = () => {
     nome: yup.string().required(""),
     numeroHabilitacao: yup.string().required(""),
     categoriaHabilitacao: yup.string().required(""),
+    vencimentoHabilitacao: yup.string().required(""),
   });
 
   const {
@@ -33,7 +34,7 @@ const FormConductor = () => {
         id="outlined-basic"
         label="Nome"
         variant="outlined"
-        margin="dense"
+        margin="normal"
         fullWidth
         {...register("nome")}
         error={errors.nome?.message ? true : false}
@@ -42,10 +43,19 @@ const FormConductor = () => {
         id="outlined-basic"
         label="Número da Habilitação"
         variant="outlined"
-        margin="normal"
+        margin="dense"
         fullWidth
         {...register("numeroHabilitacao")}
         error={errors.numeroHabilitacao?.message ? true : false}
+      />
+      <TextField
+        id="outlined-basic"
+        label="Vencimento da Habilitação"
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        {...register("vencimentoHabilitacao")}
+        error={errors.vencimentoHabilitacao?.message ? true : false}
       />
     </FormLayout>
   );

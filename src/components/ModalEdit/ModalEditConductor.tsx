@@ -13,9 +13,8 @@ const ModalEditConductor = ({ id, setShowModalEdit, data }: IModalEdit) => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const schema = yup.object().shape({
-    nome: yup.string().required(""),
     numeroHabilitacao: yup.string().required(""),
-    categoriaHabilitacao: yup.string().required(""),
+    vencimentoHabilitacao: yup.string().required(""),
   });
 
   const {
@@ -28,6 +27,8 @@ const ModalEditConductor = ({ id, setShowModalEdit, data }: IModalEdit) => {
 
   const onSubmitFunction = (data: any) => {
     setLoading(true);
+
+    data.id = id;
 
     api
       .put(`Condutor/${id}`, data)
@@ -44,23 +45,23 @@ const ModalEditConductor = ({ id, setShowModalEdit, data }: IModalEdit) => {
     >
       <TextField
         id="outlined-basic"
-        label="Nome"
-        variant="outlined"
-        margin="dense"
-        fullWidth
-        {...register("nome")}
-        error={errors.nome?.message ? true : false}
-        defaultValue={data.nome}
-      />
-      <TextField
-        id="outlined-basic"
         label="Número da Habilitação"
         variant="outlined"
-        margin="normal"
+        margin="dense"
         fullWidth
         {...register("numeroHabilitacao")}
         error={errors.numeroHabilitacao?.message ? true : false}
         defaultValue={data.numeroHabilitacao}
+      />
+      <TextField
+        id="outlined-basic"
+        label="Vencimento da Habilitação"
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        {...register("vencimentoHabilitacao")}
+        error={errors.vencimentoHabilitacao?.message ? true : false}
+        defaultValue={data.vencimentoHabilitacao}
       />
       {loading ? (
         <LoadingButton fullWidth size="large" loading variant="contained">

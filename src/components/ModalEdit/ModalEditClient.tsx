@@ -38,6 +38,8 @@ const ModalEditClient = ({ id, setShowModalEdit, data }: IModalEdit) => {
   const onSubmitFunction = (data: any) => {
     setLoading(true);
 
+    data.id = id;
+
     api
       .put(`Cliente/${id}`, data)
       .then((_) => setShowModalEdit(false))

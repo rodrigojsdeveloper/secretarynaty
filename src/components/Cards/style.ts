@@ -8,7 +8,7 @@ const Container = styled("div")({
   flexDirection: "column",
   alignItems: "center",
   borderRadius: "4px",
-  padding: "20px",
+  padding: "15px",
   boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
   margin: "0px 10px 15px 10px",
 });
