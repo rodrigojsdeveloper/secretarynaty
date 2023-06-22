@@ -91,4 +91,5 @@ export interface IModalEditLayout {
 
 export interface IModalEdit {
   id: number;
+  setShowModalEdit: Dispatch<SetStateAction<boolean>>;
 }

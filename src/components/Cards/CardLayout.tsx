@@ -1,8 +1,8 @@
 import { ModalBackground } from "../ModalBackground";
-import { Container, Content } from "./style";
 import { ModalDelete } from "../ModalDelete";
 import { ICardLayout } from "@/interfaces";
 import { Button } from "@mui/material";
+import { Container, Content } from "./style";
 import { useState } from "react";
 import Image from "next/image";
 
@@ -37,10 +37,10 @@ const CardLayout = ({
             variant="outlined"
             color="error"
             onClick={() => setShowModalDelete(true)}
+            fullWidth
           >
             Deletar
           </Button>
-          <Button variant="outlined">Editar</Button>
         </Content>
       </Container>
     </>

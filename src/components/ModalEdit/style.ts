@@ -3,14 +3,16 @@ import { styled } from "@mui/system";
 const Container = styled("form")({
   display: "flex",
   flexDirection: "column",
-  justifyContent: "center",
+  justifyContent: "start",
   alignItems: "center",
   width: "100%",
   maxWidth: "350px",
-  padding: "25px 25px 30px 25px",
+  height: "min-content",
+  padding: "25px 25px 40px 25px",
   borderRadius: "4px",
   border: "1px solid rgba(0, 0, 0, 0.23)",
   marginTop: "25px",
+  background: "#FAFAFA",
 });
 
 const Heading = styled("h2")({
@@ -29,4 +31,9 @@ const Content = styled("div")({
   marginTop: "10px",
 });
 
-export { Container, Heading, Content };
+const ContainerButton = styled("div")({
+  width: "100%",
+  marginRight: "10px",
+});
+
+export { Container, Heading, Content, ContainerButton };

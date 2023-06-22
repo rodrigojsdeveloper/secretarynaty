@@ -14,9 +14,7 @@ import {
 import { ModalEditLayout } from "./ModalEditLayout";
 import { IModalEdit } from "@/interfaces";
 
-const ModalEditClient = ({ id }: IModalEdit) => {
-  const [showModalEdit, setShowModalEdit] = useState<boolean>(false);
-
+const ModalEditClient = ({ id, setShowModalEdit }: IModalEdit) => {
   const [UF, setUF] = useState("");
 
   const handleChange = (event: SelectChangeEvent) => {

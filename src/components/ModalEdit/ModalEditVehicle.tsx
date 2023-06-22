@@ -4,12 +4,9 @@ import { TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { IModalEdit } from "@/interfaces";
 import { api } from "@/services/api";
-import { useState } from "react";
 import * as yup from "yup";
 
-const ModalEditVehicle = ({ id }: IModalEdit) => {
-  const [showModalEdit, setShowModalEdit] = useState<boolean>(false);
-
+const ModalEditVehicle = ({ id, setShowModalEdit }: IModalEdit) => {
   const schema = yup.object().shape({
     placa: yup.string().required(""),
     marcaModelo: yup.string().required(""),

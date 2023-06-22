@@ -1,4 +1,4 @@
-import { Container, Content, Heading } from "./style";
+import { Container, Content, Heading, ContainerButton } from "./style";
 import { IModalEditLayout } from "@/interfaces";
 import { Button } from "@mui/material";
 
@@ -10,16 +10,18 @@ const ModalEditLayout = ({
 }: IModalEditLayout) => {
   return (
     <Container onSubmit={onSubmit}>
-      <Heading>{heading}</Heading>
+      <Heading>Editar {heading}</Heading>
       {children}
       <Content>
-        <Button fullWidth size="large" variant="contained" type="submit">
-          Editar
-        </Button>
+        <ContainerButton>
+          <Button fullWidth size="large" variant="contained" type="submit">
+            Editar
+          </Button>
+        </ContainerButton>
         <Button
           fullWidth
           size="large"
-          variant="contained"
+          variant="outlined"
           onClick={() => setShowModalEdit(false)}
         >
           Voltar

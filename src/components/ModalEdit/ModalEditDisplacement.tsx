@@ -4,12 +4,9 @@ import { TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { IModalEdit } from "@/interfaces";
 import { api } from "@/services/api";
-import { useState } from "react";
 import * as yup from "yup";
 
-const ModalEditDisplacement = ({ id }: IModalEdit) => {
-  const [showModalEdit, setShowModalEdit] = useState<boolean>(false);
-
+const ModalEditDisplacement = ({ id, setShowModalEdit }: IModalEdit) => {
   const schema = yup.object().shape({
     kmInicial: yup.string().required(""),
     checkList: yup.string().required(""),
@@ -30,10 +27,7 @@ const ModalEditDisplacement = ({ id }: IModalEdit) => {
 
   const onSubmitFunction = (data: any) => {
     api
-      .put(
-        `Deslocamento/${id}/EncerrarDeslocamento`,
-        data
-      )
+      .put(`Deslocamento/${id}/EncerrarDeslocamento`, data)
       .then((_) => setShowModalEdit(false))
       .catch((error) => console.error(error));
   };
