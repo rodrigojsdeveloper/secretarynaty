@@ -23,3 +23,14 @@ export interface IClientProps {
 export interface IClient {
   client: IClientProps;
 }
+
+export interface IConductorProps {
+  nome: string;
+  numeroHabilitacao: string;
+  categoriaHabilitacao: number;
+  vencimentoHabilitacao: number;
+}
+
+export interface IConductor {
+  conductor: IConductorProps;
+}

@@ -1,19 +1,9 @@
+import { IConductor } from "@/interfaces";
 import { CardLayout } from "./CardLayout";
 import user from "../../assets/user.png";
 import { Result, Text } from "./style";
 
-interface IConductor {
-  nome: string;
-  numeroHabilitacao: string;
-  categoriaHabilitacao: number;
-  vencimentoHabilitacao: number;
-}
-
-interface IConductorComponent {
-  conductor: IConductor;
-}
-
-const CardConductor = ({ conductor }: IConductorComponent) => {
+const CardConductor = ({ conductor }: IConductor) => {
   return (
     <CardLayout alt="User" src={user}>
       <Text>
