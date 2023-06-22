@@ -84,11 +84,11 @@ export interface IModalDelete {
 
 export interface IModalEditLayout {
   heading: string;
-  parameter: string;
-  parameterDisplacement?: string;
-  id: number;
   setShowModalEdit: Dispatch<SetStateAction<boolean>>;
-  data: object;
   children: React.ReactNode;
   onSubmit?: FormEventHandler<HTMLFormElement>;
+}
+
+export interface IModalEdit {
+  id: number;
 }
