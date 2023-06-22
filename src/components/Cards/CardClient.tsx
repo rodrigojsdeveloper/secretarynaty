@@ -1,19 +1,31 @@
 import { ModalEditClient } from "../ModalEdit/ModalEditClient";
 import { ModalBackground } from "../ModalBackground";
+import { IClient, IClientProps } from "@/interfaces";
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { CardLayout } from "./CardLayout";
 import user from "../../assets/user.png";
 import { Result, Text } from "./style";
-import { IClient } from "@/interfaces";
 import { Button } from "@mui/material";
-import { useState } from "react";
+import { api } from "@/services/api";
 
 const CardClient = ({ client }: IClient) => {
   const [showModalEdit, setShowModalEdit] = useState<boolean>(false);
 
+  const [showClient, setShowClient] = useState<IClientProps>(
+    {} as IClientProps
+  );
+
   let { clientId } = useParams();
 
   clientId = String(client.id);
+
+  useEffect(() => {
+    api
+      .get(`Cliente/${clientId}`)
+      .then((res) => setShowClient(res.data))
+      .catch((error) => console.error(error));
+  });
 
   return (
     <>
@@ -22,6 +34,7 @@ const CardClient = ({ client }: IClient) => {
           <ModalEditClient
             id={Number(clientId)}
             setShowModalEdit={setShowModalEdit}
+            data={showClient}
           />
         </ModalBackground>
       ) : (

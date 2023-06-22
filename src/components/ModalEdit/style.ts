@@ -11,7 +11,7 @@ const Container = styled("form")({
   padding: "25px 25px 40px 25px",
   borderRadius: "4px",
   border: "1px solid rgba(0, 0, 0, 0.23)",
-  marginTop: "25px",
+  margin: "25px 10px 80px 10px",
   background: "#FAFAFA",
 });
 
@@ -33,7 +33,6 @@ const Content = styled("div")({
 
 const ContainerButton = styled("div")({
   width: "100%",
-  marginRight: "10px",
 });
 
 export { Container, Heading, Content, ContainerButton };

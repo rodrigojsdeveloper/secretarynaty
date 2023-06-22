@@ -1,19 +1,31 @@
 import { ModalEditVehicle } from "../ModalEdit/ModalEditVehicle";
+import { IVehicle, IVehicleProps } from "@/interfaces";
 import { ModalBackground } from "../ModalBackground";
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { CardLayout } from "./CardLayout";
-import { IVehicle } from "@/interfaces";
 import car from "../../assets/car.png";
 import { Result, Text } from "./style";
 import { Button } from "@mui/material";
-import { useState } from "react";
+import { api } from "@/services/api";
 
 const CardVehicle = ({ vehicle }: IVehicle) => {
   const [showModalEdit, setShowModalEdit] = useState<boolean>(false);
 
+  const [showVehicle, setShowVehicle] = useState<IVehicleProps>(
+    {} as IVehicleProps
+  );
+
   let { vehicleId } = useParams();
 
   vehicleId = String(vehicle.id);
+
+  useEffect(() => {
+    api
+      .get(`Veiculo/${vehicleId}`)
+      .then((res) => setShowVehicle(res.data))
+      .catch((error) => console.error(error));
+  });
 
   return (
     <>
@@ -22,6 +34,7 @@ const CardVehicle = ({ vehicle }: IVehicle) => {
           <ModalEditVehicle
             id={Number(vehicleId)}
             setShowModalEdit={setShowModalEdit}
+            data={showVehicle}
           />
         </ModalBackground>
       ) : (
@@ -36,7 +49,7 @@ const CardVehicle = ({ vehicle }: IVehicle) => {
             Placa: <Result>{vehicle.placa}</Result>
           </Text>
           <Text>
-            Marca do Modelo: <Result>{vehicle.marcaModelo}</Result>
+            Marca Modelo: <Result>{vehicle.marcaModelo}</Result>
           </Text>
           <Text>
             Ano de Fabricação: <Result>{vehicle.anoFabricacao}</Result>

@@ -14,18 +14,15 @@ const ModalEditLayout = ({
       {children}
       <Content>
         <ContainerButton>
-          <Button fullWidth size="large" variant="contained" type="submit">
-            Editar
+          <Button
+            fullWidth
+            size="large"
+            variant="outlined"
+            onClick={() => setShowModalEdit(false)}
+          >
+            Voltar
           </Button>
         </ContainerButton>
-        <Button
-          fullWidth
-          size="large"
-          variant="outlined"
-          onClick={() => setShowModalEdit(false)}
-        >
-          Voltar
-        </Button>
       </Content>
     </Container>
   );

@@ -33,7 +33,7 @@ const FormConductor = () => {
         id="outlined-basic"
         label="Nome"
         variant="outlined"
-        margin="normal"
+        margin="dense"
         fullWidth
         {...register("nome")}
         error={errors.nome?.message ? true : false}
@@ -42,19 +42,10 @@ const FormConductor = () => {
         id="outlined-basic"
         label="Número da Habilitação"
         variant="outlined"
-        margin="dense"
+        margin="normal"
         fullWidth
         {...register("numeroHabilitacao")}
         error={errors.numeroHabilitacao?.message ? true : false}
-      />
-      <TextField
-        id="outlined-basic"
-        label="Categoria da Habilitação"
-        variant="outlined"
-        margin="normal"
-        fullWidth
-        {...register("categoriaHabilitacao")}
-        error={errors.categoriaHabilitacao?.message ? true : false}
       />
     </FormLayout>
   );

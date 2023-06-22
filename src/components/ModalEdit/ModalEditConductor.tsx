@@ -1,12 +1,17 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ModalEditLayout } from "./ModalEditLayout";
+import { IModalEdit } from "@/interfaces";
 import { TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { IModalEdit } from "@/interfaces";
+import { LoadingButton } from "@mui/lab";
+import { Button } from "@mui/material";
 import { api } from "@/services/api";
+import { useState } from "react";
 import * as yup from "yup";
 
-const ModalEditConductor = ({ id, setShowModalEdit }: IModalEdit) => {
+const ModalEditConductor = ({ id, setShowModalEdit, data }: IModalEdit) => {
+  const [loading, setLoading] = useState<boolean>(false);
+
   const schema = yup.object().shape({
     nome: yup.string().required(""),
     numeroHabilitacao: yup.string().required(""),
@@ -22,10 +27,13 @@ const ModalEditConductor = ({ id, setShowModalEdit }: IModalEdit) => {
   });
 
   const onSubmitFunction = (data: any) => {
+    setLoading(true);
+
     api
       .put(`Condutor/${id}`, data)
       .then((_) => setShowModalEdit(false))
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -38,29 +46,31 @@ const ModalEditConductor = ({ id, setShowModalEdit }: IModalEdit) => {
         id="outlined-basic"
         label="Nome"
         variant="outlined"
-        margin="normal"
+        margin="dense"
         fullWidth
         {...register("nome")}
         error={errors.nome?.message ? true : false}
+        defaultValue={data.nome}
       />
       <TextField
         id="outlined-basic"
         label="Número da Habilitação"
         variant="outlined"
-        margin="dense"
+        margin="normal"
         fullWidth
         {...register("numeroHabilitacao")}
         error={errors.numeroHabilitacao?.message ? true : false}
+        defaultValue={data.numeroHabilitacao}
       />
-      <TextField
-        id="outlined-basic"
-        label="Categoria da Habilitação"
-        variant="outlined"
-        margin="normal"
-        fullWidth
-        {...register("categoriaHabilitacao")}
-        error={errors.categoriaHabilitacao?.message ? true : false}
-      />
+      {loading ? (
+        <LoadingButton fullWidth size="large" loading variant="contained">
+          Submit
+        </LoadingButton>
+      ) : (
+        <Button fullWidth size="large" variant="contained" type="submit">
+          Editar
+        </Button>
+      )}
     </ModalEditLayout>
   );
 };

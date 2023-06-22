@@ -1,6 +1,10 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import { ModalEditLayout } from "./ModalEditLayout";
+import LoadingButton from "@mui/lab/LoadingButton";
+import { IModalEdit } from "@/interfaces";
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
+import { Button } from "@mui/material";
 import { api } from "@/services/api";
 import * as yup from "yup";
 import {
@@ -8,22 +12,13 @@ import {
   InputLabel,
   MenuItem,
   Select,
-  SelectChangeEvent,
   TextField,
 } from "@mui/material";
-import { ModalEditLayout } from "./ModalEditLayout";
-import { IModalEdit } from "@/interfaces";
 
-const ModalEditClient = ({ id, setShowModalEdit }: IModalEdit) => {
-  const [UF, setUF] = useState("");
-
-  const handleChange = (event: SelectChangeEvent) => {
-    setUF(event.target.value as string);
-  };
+const ModalEditClient = ({ id, setShowModalEdit, data }: IModalEdit) => {
+  const [loading, setLoading] = useState<boolean>(false);
 
   const schema = yup.object().shape({
-    numeroDocumento: yup.string().required(""),
-    tipoDocumento: yup.string().required(""),
     nome: yup.string().required(""),
     logradouro: yup.string().required(""),
     numero: yup.string().required(""),
@@ -41,10 +36,13 @@ const ModalEditClient = ({ id, setShowModalEdit }: IModalEdit) => {
   });
 
   const onSubmitFunction = (data: any) => {
+    setLoading(true);
+
     api
       .put(`Cliente/${id}`, data)
       .then((_) => setShowModalEdit(false))
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -55,29 +53,13 @@ const ModalEditClient = ({ id, setShowModalEdit }: IModalEdit) => {
     >
       <TextField
         id="outlined-basic"
-        label="Número do Documento"
-        variant="outlined"
-        fullWidth
-        {...register("numeroDocumento")}
-        error={errors.numeroDocumento?.message ? true : false}
-      />
-      <TextField
-        id="outlined-basic"
-        label="Tipo do Documento"
-        variant="outlined"
-        margin="normal"
-        fullWidth
-        {...register("tipoDocumento")}
-        error={errors.tipoDocumento?.message ? true : false}
-      />
-      <TextField
-        id="outlined-basic"
         label="Nome"
         variant="outlined"
         margin="dense"
         fullWidth
         {...register("nome")}
         error={errors.nome?.message ? true : false}
+        defaultValue={data.nome}
       />
       <TextField
         id="outlined-basic"
@@ -87,6 +69,7 @@ const ModalEditClient = ({ id, setShowModalEdit }: IModalEdit) => {
         fullWidth
         {...register("logradouro")}
         error={errors.logradouro?.message ? true : false}
+        defaultValue={data.logradouro}
       />
       <TextField
         id="outlined-basic"
@@ -96,6 +79,7 @@ const ModalEditClient = ({ id, setShowModalEdit }: IModalEdit) => {
         fullWidth
         {...register("numero")}
         error={errors.numero?.message ? true : false}
+        defaultValue={data.numero}
       />
       <TextField
         id="outlined-basic"
@@ -105,6 +89,7 @@ const ModalEditClient = ({ id, setShowModalEdit }: IModalEdit) => {
         fullWidth
         {...register("bairro")}
         error={errors.bairro?.message ? true : false}
+        defaultValue={data.bairro}
       />
       <TextField
         id="outlined-basic"
@@ -114,17 +99,17 @@ const ModalEditClient = ({ id, setShowModalEdit }: IModalEdit) => {
         fullWidth
         {...register("cidade")}
         error={errors.cidade?.message ? true : false}
+        defaultValue={data.cidade}
       />
       <FormControl margin="normal" fullWidth>
         <InputLabel id="demo-simple-select-label">UF</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={UF}
           label="UF"
           {...register("uf")}
-          onChange={handleChange}
           error={errors.uf?.message ? true : false}
+          defaultValue={data.uf}
         >
           <MenuItem value="AC">AC</MenuItem>
           <MenuItem value="AL">AL</MenuItem>
@@ -155,6 +140,15 @@ const ModalEditClient = ({ id, setShowModalEdit }: IModalEdit) => {
           <MenuItem value="TO">TO</MenuItem>
         </Select>
       </FormControl>
+      {loading ? (
+        <LoadingButton fullWidth size="large" loading variant="contained">
+          Submit
+        </LoadingButton>
+      ) : (
+        <Button fullWidth size="large" variant="contained" type="submit">
+          Editar
+        </Button>
+      )}
     </ModalEditLayout>
   );
 };

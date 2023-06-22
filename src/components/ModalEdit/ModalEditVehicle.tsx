@@ -1,12 +1,17 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ModalEditLayout } from "./ModalEditLayout";
+import { IModalEdit } from "@/interfaces";
 import { TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { IModalEdit } from "@/interfaces";
+import { LoadingButton } from "@mui/lab";
+import { Button } from "@mui/material";
 import { api } from "@/services/api";
+import { useState } from "react";
 import * as yup from "yup";
 
-const ModalEditVehicle = ({ id, setShowModalEdit }: IModalEdit) => {
+const ModalEditVehicle = ({ id, setShowModalEdit, data }: IModalEdit) => {
+  const [loading, setLoading] = useState<boolean>(false);
+
   const schema = yup.object().shape({
     placa: yup.string().required(""),
     marcaModelo: yup.string().required(""),
@@ -23,10 +28,13 @@ const ModalEditVehicle = ({ id, setShowModalEdit }: IModalEdit) => {
   });
 
   const onSubmitFunction = (data: any) => {
+    setLoading(true);
+
     api
       .put(`Veiculo/${id}`, data)
       .then((_) => setShowModalEdit(false))
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -42,6 +50,7 @@ const ModalEditVehicle = ({ id, setShowModalEdit }: IModalEdit) => {
         fullWidth
         {...register("placa")}
         error={errors.placa?.message ? true : false}
+        defaultValue={data.placa}
       />
       <TextField
         id="outlined-basic"
@@ -51,6 +60,7 @@ const ModalEditVehicle = ({ id, setShowModalEdit }: IModalEdit) => {
         fullWidth
         {...register("marcaModelo")}
         error={errors.marcaModelo?.message ? true : false}
+        defaultValue={data.marcaModelo}
       />
       <TextField
         id="outlined-basic"
@@ -61,6 +71,7 @@ const ModalEditVehicle = ({ id, setShowModalEdit }: IModalEdit) => {
         fullWidth
         {...register("anoFabricacao")}
         error={errors.anoFabricacao?.message ? true : false}
+        defaultValue={data.anoFabricacao}
       />
       <TextField
         id="outlined-basic"
@@ -71,7 +82,17 @@ const ModalEditVehicle = ({ id, setShowModalEdit }: IModalEdit) => {
         fullWidth
         {...register("kmAtual")}
         error={errors.kmAtual?.message ? true : false}
+        defaultValue={data.kmAtual}
       />
+      {loading ? (
+        <LoadingButton fullWidth size="large" loading variant="contained">
+          Submit
+        </LoadingButton>
+      ) : (
+        <Button fullWidth size="large" variant="contained" type="submit">
+          Editar
+        </Button>
+      )}
     </ModalEditLayout>
   );
 };

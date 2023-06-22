@@ -11,6 +11,7 @@ const Container = styled("div")({
   height: "100vh",
   padding: "40px 20px",
   background: "rgba(0, 0, 0, 0.5)",
+  overflowY: "auto",
 });
 
 export { Container };

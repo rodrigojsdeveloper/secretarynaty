@@ -1,20 +1,32 @@
 import { ModalEditConductor } from "../ModalEdit/ModalEditConductor";
+import { IConductor, IConductorProps } from "@/interfaces";
 import { formattedDate } from "@/utils/formattedDate";
 import { ModalBackground } from "../ModalBackground";
 import { useParams } from "react-router-dom";
-import { IConductor } from "@/interfaces";
+import { useEffect, useState } from "react";
 import { CardLayout } from "./CardLayout";
 import user from "../../assets/user.png";
 import { Result, Text } from "./style";
 import { Button } from "@mui/material";
-import { useState } from "react";
+import { api } from "@/services/api";
 
 const CardConductor = ({ conductor }: IConductor) => {
   const [showModalEdit, setShowModalEdit] = useState<boolean>(false);
 
+  const [showConductor, setShowConductor] = useState<IConductorProps>(
+    {} as IConductorProps
+  );
+
   let { conductorId } = useParams();
 
   conductorId = String(conductor.id);
+
+  useEffect(() => {
+    api
+      .get(`Condutor/${conductorId}`)
+      .then((res) => setShowConductor(res.data))
+      .catch((error) => console.error(error));
+  });
 
   return (
     <>
@@ -23,6 +35,7 @@ const CardConductor = ({ conductor }: IConductor) => {
           <ModalEditConductor
             id={Number(conductorId)}
             setShowModalEdit={setShowModalEdit}
+            data={showConductor}
           />
         </ModalBackground>
       ) : (
@@ -38,10 +51,6 @@ const CardConductor = ({ conductor }: IConductor) => {
           </Text>
           <Text>
             N. da Habilitação: <Result>{conductor.numeroHabilitacao}</Result>
-          </Text>
-          <Text>
-            Cat. da Habilitação:{" "}
-            <Result>{conductor.categoriaHabilitacao}</Result>
           </Text>
           <Text>
             Ven. da Habilitação:{" "}

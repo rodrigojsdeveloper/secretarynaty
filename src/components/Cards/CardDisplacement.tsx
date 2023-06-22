@@ -1,20 +1,32 @@
 import { ModalEditDisplacement } from "../ModalEdit/ModalEditDisplacement";
+import { IDisplacement, IDisplacementProps } from "@/interfaces";
 import { formattedDate } from "@/utils/formattedDate";
 import { ModalBackground } from "../ModalBackground";
 import maps from "../../assets/displacement.png";
 import { useParams } from "react-router-dom";
-import { IDisplacement } from "@/interfaces";
+import { useEffect, useState } from "react";
 import { CardLayout } from "./CardLayout";
 import { Result, Text } from "./style";
 import { Button } from "@mui/material";
-import { useState } from "react";
+import { api } from "@/services/api";
 
 const CardDisplacement = ({ displacement }: IDisplacement) => {
   const [showModalEdit, setShowModalEdit] = useState<boolean>(false);
 
+  const [showDisplacement, setShowDisplacement] = useState<IDisplacementProps>(
+    {} as IDisplacementProps
+  );
+
   let { displacementId } = useParams();
 
   displacementId = String(displacement.id);
+
+  useEffect(() => {
+    api
+      .get(`Veiculo/${displacementId}`)
+      .then((res) => setShowDisplacement(res.data))
+      .catch((error) => console.error(error));
+  });
 
   return (
     <>
@@ -23,6 +35,7 @@ const CardDisplacement = ({ displacement }: IDisplacement) => {
           <ModalEditDisplacement
             id={Number(displacementId)}
             setShowModalEdit={setShowModalEdit}
+            data={showDisplacement}
           />
         </ModalBackground>
       ) : (
