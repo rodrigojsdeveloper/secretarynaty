@@ -1,5 +1,5 @@
 import { CardLayout } from "./CardLayout";
-import car from "../../assets/car.png";
+import user from "../../assets/user.png";
 import { Result, Text } from "./style";
 
 interface IClient {
@@ -19,7 +19,7 @@ interface IClientComponent {
 
 const CardClient = ({ client }: IClientComponent) => {
   return (
-    <CardLayout alt="Car" src={car}>
+    <CardLayout alt="User" src={user}>
       <Text>
         Número do Documento: <Result>{client.numeroDocumento}</Result>
       </Text>
