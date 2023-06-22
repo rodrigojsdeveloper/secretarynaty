@@ -3,6 +3,7 @@ import { styled } from "@mui/system";
 import Button from "@mui/material/Button";
 import { FormClient } from "@/components/Forms/FormClient";
 import { FormConductor } from "@/components/Forms/FormConductor";
+import { FormDisplacement } from "@/components/Forms/FormDisplacement";
 
 const Container = styled("div")({});
 
@@ -29,7 +30,7 @@ const Text = styled("p")({
 export default function Home() {
   return (
     <Container>
-      <FormClient />
+      <FormDisplacement />
     </Container>
   );
 }
