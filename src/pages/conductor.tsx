@@ -3,8 +3,8 @@ import { FormConductor } from "@/components/Forms/FormConductor";
 import { HelmetProvider, Helmet } from "react-helmet-async";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Container } from "../app/stylePages";
 import { Header } from "@/components/Header";
-import { Container } from "./style";
 
 const Conductor = () => {
   return (
