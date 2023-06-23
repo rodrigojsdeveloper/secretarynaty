@@ -9,6 +9,7 @@ const Container = styled("nav")({
   background: "#FAFAFA",
   borderBottom: "2px solid #F1F1F1",
   position: "absolute",
+  left: 0,
   boxSizing: "border-box",
   padding: "10px 0",
 });

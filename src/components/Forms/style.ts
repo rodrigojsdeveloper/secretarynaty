@@ -11,7 +11,8 @@ const Container = styled("form")({
   padding: "25px 25px 30px 25px",
   borderRadius: "4px",
   border: "1px solid rgba(0, 0, 0, 0.23)",
-  marginTop: "25px"
+  marginTop: "25px",
+  boxSizing: "border-box",
 });
 
 const Heading = styled("h2")({

@@ -3,7 +3,9 @@ import { useRouter } from "next/navigation";
 import { Button } from "@mui/material";
 import { styled } from "@mui/system";
 
-const Container = styled("div")({});
+const Container = styled("div")({
+  margin: "0",
+});
 
 const Heading = styled("h1")({
   color: "black",

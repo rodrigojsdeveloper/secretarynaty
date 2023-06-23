@@ -15,7 +15,7 @@ const Container = styled("div")({
   padding: "5px 50px",
   boxSizing: "border-box",
   ["@media (max-width: 425px)"]: {
-    padding: "5px 0",
+    padding: "5px 15px",
   },
 });
 
@@ -41,6 +41,7 @@ const Link = styled("a")({
 });
 
 const ContainerImage = styled("figure")({
+  margin: "0",
   ["@media (min-width: 1040px)"]: {
     display: "none",
   },

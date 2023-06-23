@@ -23,6 +23,13 @@ const Client = () => {
       />
       <HelmetProvider>
         <Helmet title="Teste Secretária Naty" />
+        <style>
+          {`
+            body {
+              margin: 0;
+            }
+            `}
+        </style>
       </HelmetProvider>
       <Header />
       <Container>

@@ -9,6 +9,7 @@ const Container = styled("div")({
   width: "100%",
   maxWidth: "830px",
   marginLeft: "20px",
+  boxSizing: "border-box",
   ["@media (max-width: 1040px)"]: {
     marginLeft: "0px",
     marginTop: "40px",
@@ -35,6 +36,7 @@ const Content = styled("menu")({
   borderRadius: "4px",
   padding: "10px 5px",
   overflowY: "auto",
+  boxSizing: "border-box",
   ["@media (max-width: 1040px)"]: {
     justifyContent: "center",
   },

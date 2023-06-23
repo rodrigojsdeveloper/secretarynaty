@@ -5,7 +5,7 @@ const Container = styled("div")({
   flexDirection: "row",
   justifyContent: "space-between",
   alignItems: "start",
-  padding: "10px 30px",
+  padding: "10px",
   marginTop: "70px",
   ["@media (max-width: 1040px)"]: {
     flexDirection: "column",
