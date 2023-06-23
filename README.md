@@ -5,7 +5,7 @@
 <p align="center">
  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/rodrigojsdeveloper/test-secretarianaty?color=56BEB8&logo=typescript">
 
-  <img alt="GitHub top language" src="https://img.shields.io/badge/react-18.2.0-blue">
+  <img alt="GitHub top language" src="https://img.shields.io/badge/nextjs-13.4.6-blue">
 <hr>
 
 <p align="center">
