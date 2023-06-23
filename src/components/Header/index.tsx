@@ -89,7 +89,7 @@ const Header = () => {
           alt="Secretaria Naty"
           width={30}
           onClick={handleClick}
-          style={{ cursor: "pointer", marginRight: "25px" }}
+          style={{ cursor: "pointer" }}
         />
       </ContainerImage>
       {showHeaderMobile ? <HeaderMobile /> : null}
