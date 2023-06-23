@@ -11,7 +11,7 @@ const Container = styled("form")({
   padding: "25px 25px 40px 25px",
   borderRadius: "4px",
   border: "1px solid rgba(0, 0, 0, 0.23)",
-  margin: "25px 10px 80px 10px",
+  margin: "0 10px 80px 10px",
   background: "#FAFAFA",
 });
 

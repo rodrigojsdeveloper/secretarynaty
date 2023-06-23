@@ -1,9 +1,5 @@
 import { Container, Content, Heading } from "./style";
-
-interface IListLayout {
-  heading: string;
-  children: React.ReactNode;
-}
+import { IListLayout } from "@/interfaces";
 
 const ListLayout = ({ heading, children }: IListLayout) => {
   return (

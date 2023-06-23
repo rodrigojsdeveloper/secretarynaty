@@ -94,3 +94,8 @@ export interface IModalEdit {
   setShowModalEdit: Dispatch<SetStateAction<boolean>>;
   data: any;
 }
+
+export interface IListLayout {
+  heading: string;
+  children: React.ReactNode;
+}

@@ -2,6 +2,7 @@ import { CardDisplacement } from "../Cards/CardDisplacement";
 import { IDisplacementProps } from "@/interfaces";
 import { ListLayout } from "./ListLayout";
 import { api } from "@/services/api";
+import { Heading } from "./style";
 import { useState } from "react";
 
 const ListDisplacements = () => {
@@ -20,9 +21,13 @@ const ListDisplacements = () => {
 
   return (
     <ListLayout heading="Deslocamentos cadastrados">
-      {displacements.map((displacement: IDisplacementProps) => (
-        <CardDisplacement displacement={displacement} key={displacement.id} />
-      ))}
+      {displacements.length > 0 ? (
+        displacements.map((displacement: IDisplacementProps) => (
+          <CardDisplacement displacement={displacement} key={displacement.id} />
+        ))
+      ) : (
+        <Heading>Não há deslocamento</Heading>
+      )}
     </ListLayout>
   );
 };

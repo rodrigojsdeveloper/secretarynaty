@@ -9,7 +9,7 @@ const Container = styled("div")({
   inset: 0,
   width: "100%",
   height: "100vh",
-  padding: "40px 20px",
+  paddingTop: "40px",
   background: "rgba(0, 0, 0, 0.5)",
   overflowY: "auto",
 });

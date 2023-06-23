@@ -50,8 +50,8 @@ const Text = styled("p")({
 export default function Home() {
   return (
     <Container>
-      <FormConductor />
-      <ListVehicles />
+      <FormClient />
+      <ListClients />
     </Container>
   );
 }

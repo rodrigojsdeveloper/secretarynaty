@@ -3,34 +3,35 @@ import { styled } from "@mui/system";
 const Container = styled("div")({
   width: "100%",
   maxWidth: "300px",
-  height: "180px",
+  height: "min-content",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   background: "#FAFAFA",
   borderRadius: "4px",
+  padding: "15px",
+  margin: "0 10px"
 });
 
 const Content = styled("div")({
   width: "100%",
   display: "flex",
-  flexDirection: "row",
+  flexDirection: "column",
   justifyContent: "space-around",
   alignItems: "center",
-  marginTop: "10px",
+  margin: "10px 0",
 });
 
-const Heading = styled("h2")({
+const ContainerButton = styled("div")({
   width: "100%",
-  height: "35px",
+  marginBottom: "10px",
+})
+
+const Heading = styled("h2")({
   fontSize: "20px",
   fontWeight: "600",
   lineHeight: "22px",
-  background: "#F1F1F1",
   textAlign: "center",
-  paddingTop: "10px",
-  margin: "0px",
-  borderRadius: "4px 4px 0px 0px",
 });
 
 const Text = styled("p")({
@@ -41,4 +42,4 @@ const Text = styled("p")({
   margin: "25px 0 20px 0",
 });
 
-export { Container, Content, Text, Heading };
+export { Container, Content, Text, Heading, ContainerButton };
