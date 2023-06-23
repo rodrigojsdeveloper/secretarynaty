@@ -15,12 +15,7 @@ const ModalEditDisplacement = ({ id, setShowModalEdit, data }: IModalEdit) => {
 
   const schema = yup.object().shape({
     kmInicial: yup.string().required(""),
-    checkList: yup.string().required(""),
-    motivo: yup.string().required(""),
     observacao: yup.string().required(""),
-    idCondutor: yup.number().required(""),
-    idVeiculo: yup.number().required(""),
-    idCliente: yup.number().required(""),
   });
 
   const {
@@ -67,26 +62,6 @@ const ModalEditDisplacement = ({ id, setShowModalEdit, data }: IModalEdit) => {
       />
       <TextField
         id="outlined-basic"
-        label="Check List"
-        variant="outlined"
-        margin="dense"
-        fullWidth
-        {...register("checkList")}
-        error={errors.checkList?.message ? true : false}
-        defaultValue={data.checkList}
-      />
-      <TextField
-        id="outlined-basic"
-        label="Motivo"
-        variant="outlined"
-        margin="normal"
-        fullWidth
-        {...register("motivo")}
-        error={errors.motivo?.message ? true : false}
-        defaultValue={data.motivo}
-      />
-      <TextField
-        id="outlined-basic"
         label="Observação"
         variant="outlined"
         margin="normal"
@@ -94,37 +69,6 @@ const ModalEditDisplacement = ({ id, setShowModalEdit, data }: IModalEdit) => {
         {...register("observacao")}
         error={errors.observacao?.message ? true : false}
         defaultValue={data.observacao}
-      />
-      <TextField
-        id="outlined-basic"
-        label="ID Condutor"
-        variant="outlined"
-        margin="normal"
-        fullWidth
-        type="number"
-        {...register("idCondutor")}
-        error={errors.idCondutor?.message ? true : false}
-        defaultValue={data.idCondutor}
-      />
-      <TextField
-        id="outlined-basic"
-        label="iD Veículo"
-        variant="outlined"
-        margin="normal"
-        fullWidth
-        {...register("idVeiculo")}
-        error={errors.idVeiculo?.message ? true : false}
-        defaultValue={data.idVeiculo}
-      />
-      <TextField
-        id="outlined-basic"
-        label="ID Cliente"
-        variant="outlined"
-        margin="normal"
-        fullWidth
-        {...register("idCliente")}
-        error={errors.idCliente?.message ? true : false}
-        defaultValue={data.idCliente}
       />
       {loading ? (
         <LoadingButton fullWidth size="large" loading variant="contained">

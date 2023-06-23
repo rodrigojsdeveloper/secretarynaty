@@ -62,6 +62,15 @@ const FormConductor = () => {
       />
       <TextField
         id="outlined-basic"
+        label="Categoria da Habilitação"
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        {...register("categoriaHabilitacao")}
+        error={errors.categoriaHabilitacao?.message ? true : false}
+      />
+      <TextField
+        id="outlined-basic"
         label="Vencimento da Habilitação"
         variant="outlined"
         margin="normal"
