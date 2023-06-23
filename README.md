@@ -18,7 +18,7 @@
 
 ## :dart: Teste
 
-Esse teste é para criar vários cruds pelo frontend.
+Este teste tem como objetivo desenvolver várias operações CRUD por meio da interface do usuário (frontend).
 
 Link do projeto: [https://test-secretarianaty.vercel.app/](https://test-secretarianaty.vercel.app/)
 
