@@ -46,10 +46,10 @@ const CardClient = ({ client }: IClient) => {
           id={Number(clientId)}
         >
           <Text>
-            N. do Documento: <Result>{client.numeroDocumento}</Result>
+            N. do Doc: <Result>{client.numeroDocumento}</Result>
           </Text>
           <Text>
-            Tipo do Documento: <Result>{client.tipoDocumento}</Result>
+            Tipo do Doc: <Result>{client.tipoDocumento}</Result>
           </Text>
           <Text>
             Nome: <Result>{client.nome}</Result>

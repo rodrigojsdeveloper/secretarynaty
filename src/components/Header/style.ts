@@ -14,12 +14,18 @@ const Container = styled("div")({
   zIndex: 1000,
   padding: "5px 50px",
   boxSizing: "border-box",
+  ["@media (max-width: 425px)"]: {
+    padding: "5px 0",
+  },
 });
 
-const Content = styled("div")({
+const Content = styled("nav")({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
+  ["@media (max-width: 1040px)"]: {
+    display: "none",
+  },
 });
 
 const Link = styled("a")({
@@ -27,12 +33,10 @@ const Link = styled("a")({
   fontWeight: "500",
   lineHeight: "16px",
   color: "gray",
-  margin: "0 10px",
+  margin: "7px 10px",
   textDecoration: "unset",
   "&:hover": {
-    textDecoration: "underline",
     cursor: "pointer",
-    color: "#000",
   },
 });
 

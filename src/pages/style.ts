@@ -7,7 +7,7 @@ const Container = styled("div")({
   alignItems: "start",
   padding: "10px 30px",
   marginTop: "70px",
-  ["@media (max-width: 1024px)"]: {
+  ["@media (max-width: 1040px)"]: {
     flexDirection: "column",
     alignItems: "center",
   },

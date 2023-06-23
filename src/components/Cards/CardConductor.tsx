@@ -50,10 +50,10 @@ const CardConductor = ({ conductor }: IConductor) => {
             Nome: <Result>{conductor.nome}</Result>
           </Text>
           <Text>
-            N. da Habilitação: <Result>{conductor.numeroHabilitacao}</Result>
+            N. da Hab: <Result>{conductor.numeroHabilitacao}</Result>
           </Text>
           <Text>
-            Ven. da Habilitação:{" "}
+            Ven. da Hab:{" "}
             <Result>
               {formattedDate(String(conductor.vencimentoHabilitacao))}
             </Result>
