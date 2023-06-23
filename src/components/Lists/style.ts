@@ -34,7 +34,7 @@ const Content = styled("menu")({
   border: "1px solid rgba(0, 0, 0, 0.23)",
   borderRadius: "4px",
   padding: "10px 5px",
-  overflowY: "scroll",
+  overflowY: "auto",
   ["@media (max-width: 886px)"]: {
     justifyContent: "center",
   },

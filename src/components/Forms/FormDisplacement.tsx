@@ -2,10 +2,15 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { TextField } from "@mui/material";
 import { FormLayout } from "./FormLayout";
 import { useForm } from "react-hook-form";
+import { LoadingButton } from "@mui/lab";
+import { Button } from "@mui/material";
 import { api } from "@/services/api";
+import { useState } from "react";
 import * as yup from "yup";
 
 const FormDisplacement = () => {
+  const [loading, setLoading] = useState<boolean>(false);
+
   const schema = yup.object().shape({
     kmInicial: yup.string().required(""),
     checkList: yup.string().required(""),
@@ -25,10 +30,13 @@ const FormDisplacement = () => {
   });
 
   const onSubmitFunction = (data: any) => {
+    setLoading(true);
+
     api
       .post("Deslocamento/IniciarDeslocamento", data)
       .then((_) => {})
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -100,6 +108,15 @@ const FormDisplacement = () => {
         {...register("idCliente")}
         error={errors.idCliente?.message ? true : false}
       />
+      {loading ? (
+        <LoadingButton fullWidth size="large" loading variant="contained">
+          Submit
+        </LoadingButton>
+      ) : (
+        <Button fullWidth size="large" variant="contained" type="submit">
+          Cadastrar
+        </Button>
+      )}
     </FormLayout>
   );
 };

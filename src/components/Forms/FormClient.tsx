@@ -1,7 +1,9 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormLayout } from "./FormLayout";
 import { useForm } from "react-hook-form";
+import { LoadingButton } from "@mui/lab";
 import React, { useState } from "react";
+import { Button } from "@mui/material";
 import { api } from "@/services/api";
 import * as yup from "yup";
 import {
@@ -14,6 +16,8 @@ import {
 } from "@mui/material";
 
 const FormClient = () => {
+  const [loading, setLoading] = useState<boolean>(false);
+
   const [UF, setUF] = useState("");
 
   const handleChange = (event: SelectChangeEvent) => {
@@ -40,10 +44,13 @@ const FormClient = () => {
   });
 
   const onSubmitFunction = (data: any) => {
+    setLoading(true);
+
     api
       .post("Cliente", data)
       .then((_) => {})
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -150,6 +157,15 @@ const FormClient = () => {
           <MenuItem value="TO">TO</MenuItem>
         </Select>
       </FormControl>
+      {loading ? (
+        <LoadingButton fullWidth size="large" loading variant="contained">
+          Submit
+        </LoadingButton>
+      ) : (
+        <Button fullWidth size="large" variant="contained" type="submit">
+          Cadastrar
+        </Button>
+      )}
     </FormLayout>
   );
 };
