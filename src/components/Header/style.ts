@@ -2,21 +2,30 @@ import { styled } from "@mui/material";
 
 const Container = styled("div")({
   fontFamily: "Lexend, monospace",
+  display: "flex",
+  alignItems: "center",
   width: "100%",
   height: "70px",
   background: "#FAFAFA",
   borderBottom: "2px solid #F1F1F1",
   position: "fixed",
   top: 0,
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
   zIndex: 1000,
-  padding: "5px 50px",
+  padding: "5px 15px 5px 20px",
   boxSizing: "border-box",
-  ["@media (max-width: 425px)"]: {
+  ["@media (max-width: 1040px)"]: {
     padding: "5px 15px",
   },
+});
+
+const SubContainer = styled("div")({
+  width: "100%",
+  maxWidth: "1440px",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "center",
+  margin: "0 auto",
 });
 
 const Content = styled("nav")({
@@ -47,4 +56,4 @@ const ContainerImage = styled("figure")({
   },
 });
 
-export { Container, Content, Link, ContainerImage };
+export { Container, SubContainer, Content, Link, ContainerImage };

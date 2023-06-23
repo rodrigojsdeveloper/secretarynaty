@@ -7,7 +7,7 @@ const Container = styled("div")({
   justifyContent: "center",
   alignItems: "center",
   width: "100%",
-  maxWidth: "830px",
+  maxWidth: "840px",
   marginLeft: "20px",
   boxSizing: "border-box",
   ["@media (max-width: 1040px)"]: {
