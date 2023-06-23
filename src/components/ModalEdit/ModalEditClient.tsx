@@ -5,6 +5,7 @@ import { IModalEdit } from "@/interfaces";
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 import { Button } from "@mui/material";
+import { toast } from "react-toastify";
 import { api } from "@/services/api";
 import * as yup from "yup";
 import {
@@ -42,8 +43,14 @@ const ModalEditClient = ({ id, setShowModalEdit, data }: IModalEdit) => {
 
     api
       .put(`Cliente/${id}`, data)
-      .then((_) => setShowModalEdit(false))
-      .catch((error) => console.error(error))
+      .then((_) => {
+        toast.success("Cliente editado com sucesso!");
+        setShowModalEdit(false);
+      })
+      .catch((error) => {
+        toast.error("Erro ao tentar deletar cliente!");
+        console.error(error);
+      })
       .finally(() => setLoading(false));
   };
 

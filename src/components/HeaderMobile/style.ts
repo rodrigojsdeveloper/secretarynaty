@@ -5,7 +5,7 @@ const Container = styled("nav")({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  marginTop: "214px",
+  marginTop: "239px",
   background: "#FAFAFA",
   borderBottom: "2px solid #F1F1F1",
   position: "absolute",

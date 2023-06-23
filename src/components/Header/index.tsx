@@ -1,4 +1,4 @@
-import { Container, Content, Link } from "./style";
+import { Container, Content, Link, ContainerImage } from "./style";
 import { HeaderMobile } from "../HeaderMobile";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -83,13 +83,15 @@ const Header = () => {
           Deslocamento
         </Link>
       </Content>
-      <Image
-        src={showX ? x : menu}
-        alt="Secretaria Naty"
-        width={30}
-        onClick={handleClick}
-        style={{ cursor: "pointer", marginRight: "25px" }}
-      />
+      <ContainerImage>
+        <Image
+          src={showX ? x : menu}
+          alt="Secretaria Naty"
+          width={30}
+          onClick={handleClick}
+          style={{ cursor: "pointer", marginRight: "25px" }}
+        />
+      </ContainerImage>
       {showHeaderMobile ? <HeaderMobile /> : null}
     </Container>
   );

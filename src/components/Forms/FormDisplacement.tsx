@@ -4,6 +4,7 @@ import { FormLayout } from "./FormLayout";
 import { useForm } from "react-hook-form";
 import { LoadingButton } from "@mui/lab";
 import { Button } from "@mui/material";
+import { toast } from "react-toastify";
 import { api } from "@/services/api";
 import { useState } from "react";
 import * as yup from "yup";
@@ -34,8 +35,11 @@ const FormDisplacement = () => {
 
     api
       .post("Deslocamento/IniciarDeslocamento", data)
-      .then((_) => {})
-      .catch((error) => console.error(error))
+      .then((_) => toast.success("Deslocamento criado com sucesso!"))
+      .catch((error) => {
+        toast.error("Erro ao tentar criar deslocamento!");
+        console.error(error);
+      })
       .finally(() => setLoading(false));
   };
 

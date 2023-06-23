@@ -2,6 +2,7 @@ import { Container, Text, Content, Heading, ContainerButton } from "./style";
 import { IModalDelete } from "@/interfaces";
 import { LoadingButton } from "@mui/lab";
 import { Button } from "@mui/material";
+import { toast } from "react-toastify";
 import { api } from "@/services/api";
 import { useState } from "react";
 
@@ -18,8 +19,11 @@ const ModalDelete = ({
 
     api
       .delete(`${parameter}/${id}`)
-      .then((_) => {})
-      .catch((error) => console.error(error))
+      .then((_) => toast.success(`${heading} deletado com sucesso!`))
+      .catch((error) => {
+        toast.error(`Erro ao tentar deletar ${heading.toLowerCase()}!`);
+        console.error(error);
+      })
       .finally(() => setLoading(false));
   };
 

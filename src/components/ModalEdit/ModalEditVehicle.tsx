@@ -5,6 +5,7 @@ import { TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { LoadingButton } from "@mui/lab";
 import { Button } from "@mui/material";
+import { toast } from "react-toastify";
 import { api } from "@/services/api";
 import { useState } from "react";
 import * as yup from "yup";
@@ -34,8 +35,14 @@ const ModalEditVehicle = ({ id, setShowModalEdit, data }: IModalEdit) => {
 
     api
       .put(`Veiculo/${id}`, data)
-      .then((_) => setShowModalEdit(false))
-      .catch((error) => console.error(error))
+      .then((_) => {
+        toast.success("Veículo editado com sucesso!");
+        setShowModalEdit(false);
+      })
+      .catch((error) => {
+        toast.error("Erro ao tentar deletar veículo!");
+        console.error(error);
+      })
       .finally(() => setLoading(false));
   };
 

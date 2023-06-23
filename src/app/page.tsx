@@ -14,6 +14,9 @@ const Heading = styled("h1")({
   letterSpacing: "-0.65px",
   width: "100%",
   maxWidth: "250px",
+  ["@media (max-width: 768px)"]: {
+    fontSize: "40px",
+  },
 });
 
 const Text = styled("p")({
@@ -28,10 +31,6 @@ const Text = styled("p")({
 export default function Home() {
   const router = useRouter();
 
-  const handleClick = () => {
-    router.push('/client');
-  };
-
   return (
     <Container>
       <Heading>Crie um deslocamento</Heading>
@@ -45,7 +44,7 @@ export default function Home() {
       <Button
         size="large"
         variant="contained"
-        onClick={handleClick}
+        onClick={() => router.push("/client")}
       >
         Entrar
       </Button>

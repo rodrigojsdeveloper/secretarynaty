@@ -33,11 +33,17 @@ const Link = styled("a")({
   fontWeight: "500",
   lineHeight: "16px",
   color: "gray",
-  margin: "7px 10px",
+  margin: "10px",
   textDecoration: "unset",
   "&:hover": {
     cursor: "pointer",
   },
 });
 
-export { Container, Content, Link };
+const ContainerImage = styled("figure")({
+  ["@media (min-width: 1040px)"]: {
+    display: "none",
+  },
+});
+
+export { Container, Content, Link, ContainerImage };
