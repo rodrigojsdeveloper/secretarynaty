@@ -14,6 +14,7 @@ const FormDisplacement = () => {
 
   const schema = yup.object().shape({
     kmInicial: yup.string().required(""),
+    inicioDeslocamento: yup.string().required(""),
     checkList: yup.string().required(""),
     motivo: yup.string().required(""),
     observacao: yup.string().required(""),
@@ -56,6 +57,19 @@ const FormDisplacement = () => {
         fullWidth
         {...register("kmInicial")}
         error={errors.kmInicial?.message ? true : false}
+      />
+      <TextField
+        id="outlined-basic"
+        label="Inicio do Deslocamento"
+        variant="outlined"
+        margin="normal"
+        type="date"
+        fullWidth
+        {...register("inicioDeslocamento")}
+        error={errors.inicioDeslocamento?.message ? true : false}
+        InputLabelProps={{
+          shrink: true,
+        }}
       />
       <TextField
         id="outlined-basic"

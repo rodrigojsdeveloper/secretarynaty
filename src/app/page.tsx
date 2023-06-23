@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 import { styled } from "@mui/system";
 
 const Container = styled("div")({
-  margin: "0",
+  marginTop: "50px",
 });
 
 const Heading = styled("h1")({

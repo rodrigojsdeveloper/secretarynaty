@@ -50,9 +50,20 @@ const CardDisplacement = ({ displacement }: IDisplacement) => {
             KM Inicial: <Result>{displacement.kmInicial}</Result>
           </Text>
           <Text>
+            KM Final: <Result>{displacement.kmFinal}</Result>
+          </Text>
+          <Text>
             Inicio do Des:{" "}
             <Result>
               {formattedDate(String(displacement.inicioDeslocamento))}
+            </Result>
+          </Text>
+          <Text>
+            Fim do Des:{" "}
+            <Result>
+              {displacement.fimDeslocamento
+                ? formattedDate(String(displacement.fimDeslocamento))
+                : formattedDate(String(displacement.inicioDeslocamento))}
             </Result>
           </Text>
           <Text>

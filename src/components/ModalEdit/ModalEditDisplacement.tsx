@@ -14,7 +14,8 @@ const ModalEditDisplacement = ({ id, setShowModalEdit, data }: IModalEdit) => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const schema = yup.object().shape({
-    kmInicial: yup.string().required(""),
+    kmFinal: yup.string().required(""),
+    fimDeslocamento: yup.string().required(""),
     observacao: yup.string().required(""),
   });
 
@@ -52,13 +53,27 @@ const ModalEditDisplacement = ({ id, setShowModalEdit, data }: IModalEdit) => {
     >
       <TextField
         id="outlined-basic"
-        label="KM Inicial"
+        label="KM Final"
         variant="outlined"
         margin="normal"
         fullWidth
-        {...register("kmInicial")}
-        error={errors.kmInicial?.message ? true : false}
-        defaultValue={data.kmInicial}
+        {...register("kmFinal")}
+        error={errors.kmFinal?.message ? true : false}
+        defaultValue={data.kmFinal}
+      />
+      <TextField
+        id="outlined-basic"
+        label="Fim do Deslocamento"
+        variant="outlined"
+        margin="normal"
+        type="date"
+        fullWidth
+        {...register("fimDeslocamento")}
+        error={errors.fimDeslocamento?.message ? true : false}
+        defaultValue={data.inicioDeslocamento.split("T")[0]}
+        InputLabelProps={{
+          shrink: true,
+        }}
       />
       <TextField
         id="outlined-basic"
