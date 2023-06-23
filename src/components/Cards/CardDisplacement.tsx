@@ -23,7 +23,7 @@ const CardDisplacement = ({ displacement }: IDisplacement) => {
 
   useEffect(() => {
     api
-      .get(`Veiculo/${displacementId}`)
+      .get(`Deslocamento/${displacementId}`)
       .then((res) => setShowDisplacement(res.data))
       .catch((error) => console.error(error));
   });

@@ -1,12 +1,13 @@
 import { styled } from "@mui/system";
 
 const Container = styled("div")({
+  fontFamily: "Lexend, monospace",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
   width: "100%",
-  maxWidth: "820px",
+  maxWidth: "830px",
   marginLeft: "20px",
   ["@media (max-width: 1024px)"]: {
     marginLeft: "0px",
@@ -15,10 +16,12 @@ const Container = styled("div")({
 });
 
 const Heading = styled("h2")({
+  width: "100%",
   fontWeight: "400",
   fontSize: "24px",
   lineHeight: "1.25",
   color: "rgba(0, 0, 0, 0.87)",
+  textAlign: "center",
 });
 
 const Content = styled("menu")({

@@ -1,6 +1,7 @@
 import { styled } from "@mui/system";
 
 const Container = styled("form")({
+  fontFamily: "Lexend, monospace",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",

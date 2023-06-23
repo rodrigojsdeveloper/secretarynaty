@@ -1,31 +1,9 @@
 "use client";
+import { useRouter } from "next/router";
+import { Button } from "@mui/material";
 import { styled } from "@mui/system";
-import Button from "@mui/material/Button";
-import { FormClient } from "@/components/Forms/FormClient";
-import { FormConductor } from "@/components/Forms/FormConductor";
-import { FormDisplacement } from "@/components/Forms/FormDisplacement";
-import { CardLayout } from "@/components/Cards/CardLayout";
-import { CardVehicle } from "@/components/Cards/CardVehicle";
-import { ListLayout } from "@/components/Lists/ListLayout";
-import { ListClients } from "@/components/Lists/ListClients";
-import { ListConductors } from "@/components/Lists/ListConductors";
-import { FormVehicle } from "@/components/Forms/FormVehicle";
-import { ListVehicles } from "@/components/Lists/ListVehicles";
-import { ListDisplacements } from "@/components/Lists/ListDisplacements";
-import { ModalBackground } from "@/components/ModalBackground";
-import { ModalDelete } from "@/components/ModalDelete";
 
-const Container = styled("div")({
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "space-between",
-  alignItems: "start",
-  padding: "10px 30px",
-  ["@media (max-width: 1024px)"]: {
-    flexDirection: "column",
-    alignItems: "center",
-  },
-});
+const Container = styled("div")({});
 
 const Heading = styled("h1")({
   color: "black",
@@ -48,10 +26,29 @@ const Text = styled("p")({
 });
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push('/client');
+  };
+
   return (
     <Container>
-      <FormClient />
-      <ListClients />
+      <Heading>Crie um deslocamento</Heading>
+
+      <Text>
+        Deslocamento é uma solução que permite gerenciar eficientemente
+        deslocamentos. Ele oferece recursos para clientes, condutores e
+        veículos, permitindo a criação, edição e exclusão de informações.
+      </Text>
+
+      <Button
+        size="large"
+        variant="contained"
+        onClick={handleClick}
+      >
+        Entrar
+      </Button>
     </Container>
   );
 }
