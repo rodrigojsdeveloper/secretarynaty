@@ -6,7 +6,7 @@ const Container = styled("div")({
   flexDirection: "row",
   justifyContent: "center",
   position: "fixed",
-  zIndex: 2000,
+  zIndex: 1000,
   inset: 0,
   width: "100%",
   height: "100vh",
