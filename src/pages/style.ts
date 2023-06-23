@@ -6,6 +6,7 @@ const Container = styled("div")({
   justifyContent: "space-between",
   alignItems: "start",
   padding: "10px 30px",
+  marginTop: "70px",
   ["@media (max-width: 1024px)"]: {
     flexDirection: "column",
     alignItems: "center",
