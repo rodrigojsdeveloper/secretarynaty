@@ -74,9 +74,13 @@ const FormConductor = () => {
         label="Vencimento da Habilitação"
         variant="outlined"
         margin="normal"
+        type="date"
         fullWidth
         {...register("vencimentoHabilitacao")}
         error={errors.vencimentoHabilitacao?.message ? true : false}
+        InputLabelProps={{
+          shrink: true,
+        }}
       />
       {loading ? (
         <LoadingButton fullWidth size="large" loading variant="contained">

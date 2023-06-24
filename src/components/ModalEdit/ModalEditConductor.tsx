@@ -65,10 +65,14 @@ const ModalEditConductor = ({ id, setShowModalEdit, data }: IModalEdit) => {
         label="Vencimento da Habilitação"
         variant="outlined"
         margin="normal"
+        type="date"
         fullWidth
         {...register("vencimentoHabilitacao")}
         error={errors.vencimentoHabilitacao?.message ? true : false}
-        defaultValue={data.vencimentoHabilitacao}
+        defaultValue={data.vencimentoHabilitacao.split("T")[0]}
+        InputLabelProps={{
+          shrink: true,
+        }}
       />
       {loading ? (
         <LoadingButton fullWidth size="large" loading variant="contained">

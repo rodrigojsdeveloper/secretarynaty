@@ -1,8 +1,8 @@
 import { ModalBackground } from "../ModalBackground";
 import { ModalDelete } from "../ModalDelete";
+import { Container, Content } from "./style";
 import { ICardLayout } from "@/interfaces";
 import { Button } from "@mui/material";
-import { Container, Content } from "./style";
 import { useState } from "react";
 import Image from "next/image";
 
