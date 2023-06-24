@@ -54,7 +54,7 @@ const Header = () => {
             style={
               newLastParameter == "client"
                 ? { color: "#000", textDecoration: "underline" }
-                : { color: "gray" }
+                : { color: "#545454" }
             }
           >
             Cliente
@@ -64,7 +64,7 @@ const Header = () => {
             style={
               newLastParameter == "conductor"
                 ? { color: "#000", textDecoration: "underline" }
-                : { color: "gray" }
+                : { color: "#545454" }
             }
           >
             Condutor
@@ -74,7 +74,7 @@ const Header = () => {
             style={
               newLastParameter == "vehicle"
                 ? { color: "#000", textDecoration: "underline" }
-                : { color: "gray" }
+                : { color: "#545454" }
             }
           >
             Veículo
@@ -84,7 +84,7 @@ const Header = () => {
             style={
               newLastParameter == "displacement"
                 ? { color: "#000", textDecoration: "underline" }
-                : { color: "gray" }
+                : { color: "#545454" }
             }
           >
             Deslocamento

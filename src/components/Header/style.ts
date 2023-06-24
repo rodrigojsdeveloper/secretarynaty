@@ -1,6 +1,6 @@
 import { styled } from "@mui/material";
 
-const Container = styled("div")({
+const Container = styled("header")({
   fontFamily: "Lexend, monospace",
   display: "flex",
   alignItems: "center",
@@ -41,7 +41,6 @@ const Link = styled("a")({
   fontSize: "16px",
   fontWeight: "500",
   lineHeight: "16px",
-  color: "gray",
   margin: "10px",
   textDecoration: "unset",
   "&:hover": {

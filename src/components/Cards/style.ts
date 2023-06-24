@@ -36,7 +36,7 @@ const Text = styled("div")({
 
 const Result = styled("p")({
   fontWeight: "500",
-  color: "gray",
+  color: "#575757",
 });
 
 export { Container, Content, Text, Result };

@@ -60,7 +60,6 @@ const FormClient = () => {
   return (
     <FormLayout heading="Cliente" onSubmit={handleSubmit(onSubmitFunction)}>
       <TextField
-        id="outlined-basic"
         label="Número do Documento"
         variant="outlined"
         fullWidth
@@ -68,7 +67,6 @@ const FormClient = () => {
         error={errors.numeroDocumento?.message ? true : false}
       />
       <TextField
-        id="outlined-basic"
         label="Tipo do Documento"
         variant="outlined"
         margin="normal"
@@ -77,7 +75,6 @@ const FormClient = () => {
         error={errors.tipoDocumento?.message ? true : false}
       />
       <TextField
-        id="outlined-basic"
         label="Nome"
         variant="outlined"
         margin="dense"
@@ -86,7 +83,6 @@ const FormClient = () => {
         error={errors.nome?.message ? true : false}
       />
       <TextField
-        id="outlined-basic"
         label="Logradouro"
         variant="outlined"
         margin="normal"
@@ -95,7 +91,6 @@ const FormClient = () => {
         error={errors.logradouro?.message ? true : false}
       />
       <TextField
-        id="outlined-basic"
         label="Número"
         variant="outlined"
         margin="dense"
@@ -104,7 +99,6 @@ const FormClient = () => {
         error={errors.numero?.message ? true : false}
       />
       <TextField
-        id="outlined-basic"
         label="Bairro"
         variant="outlined"
         margin="normal"
@@ -113,7 +107,6 @@ const FormClient = () => {
         error={errors.bairro?.message ? true : false}
       />
       <TextField
-        id="outlined-basic"
         label="Cidade"
         variant="outlined"
         margin="dense"
