@@ -35,16 +35,8 @@ const Text = styled("div")({
 });
 
 const Result = styled("p")({
-  width: "100px",
-  maxWidth: "100%",
   fontWeight: "500",
   color: "gray",
-  display: "-webkit-box",
-  WebkitLineClamp: 1,
-  WebkitBoxOrient: "vertical",
-  overflow: "hidden",
-  textOverflow: "ellipsis",
-  textAlign: "right",
 });
 
 export { Container, Content, Text, Result };

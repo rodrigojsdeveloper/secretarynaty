@@ -34,7 +34,7 @@ export interface IConductorProps {
   id: number;
   nome: string;
   numeroHabilitacao: string;
-  categoriaHabilitacao: number;
+  catergoriaHabilitacao: number;
   vencimentoHabilitacao: number;
 }
 
