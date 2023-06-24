@@ -1,10 +1,40 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { Button } from "@mui/material";
+import home from "../assets/home.svg";
 import { styled } from "@mui/system";
+import Image from "next/image";
 
 const Container = styled("div")({
-  marginTop: "50px",
+  width: "100%",
+  minHeight: "100vh",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
+  alignItems: "center",
+});
+
+const SubContainer = styled("div")({
+  width: "100%",
+  maxWidth: "1440px",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "center",
+  margin: "0 auto",
+});
+
+const Content = styled("div")({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "start",
+});
+
+const ContainerImage = styled("figure")({
+  ["@media (max-width: 1024px)"]: {
+    display: "none",
+  },
 });
 
 const Heading = styled("h1")({
@@ -35,21 +65,29 @@ export default function Home() {
 
   return (
     <Container>
-      <Heading>Crie um deslocamento</Heading>
+      <SubContainer>
+        <Content>
+          <Heading>Crie um deslocamento</Heading>
 
-      <Text>
-        Deslocamento é uma solução que permite gerenciar eficientemente
-        deslocamentos. Ele oferece recursos para clientes, condutores e
-        veículos, permitindo a criação, edição e exclusão de informações.
-      </Text>
+          <Text>
+            Deslocamento é uma solução que permite gerenciar eficientemente
+            deslocamentos. Ele oferece recursos para clientes, condutores e
+            veículos, permitindo a criação, edição e exclusão de informações.
+          </Text>
 
-      <Button
-        size="large"
-        variant="contained"
-        onClick={() => router.push("/client")}
-      >
-        Entrar
-      </Button>
+          <Button
+            size="large"
+            variant="contained"
+            onClick={() => router.push("/client")}
+          >
+            Entrar
+          </Button>
+        </Content>
+
+        <ContainerImage>
+          <Image src={home} alt="Home" />
+        </ContainerImage>
+      </SubContainer>
     </Container>
   );
 }
