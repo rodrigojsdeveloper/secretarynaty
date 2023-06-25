@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import menu from "../../assets/menu.png";
 import logo from "../../assets/logo.png";
-import { inter } from "@/app/layout";
+import { inter } from "@/app/font";
 import x from "../../assets/x.png";
 import Image from "next/image";
 import {

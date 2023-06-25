@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Container } from "../app/stylePages";
 import { Header } from "@/components/Header";
-import { inter } from "@/app/layout";
+import { inter } from "@/app/font";
 
 const Client = () => {
   return (

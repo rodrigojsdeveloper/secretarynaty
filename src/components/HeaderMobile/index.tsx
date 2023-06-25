@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "../Header/style";
-import { inter } from "@/app/layout";
+import { inter } from "@/app/font";
 import { Container } from "./style";
 
 const HeaderMobile = () => {
