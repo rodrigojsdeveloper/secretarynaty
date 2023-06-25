@@ -1,10 +1,5 @@
 import { inter } from "./font";
 
-export const metadata = {
-  title: "Teste Secretária Naty",
-  description: "Esse é um teste da empresa Secretária Naty",
-};
-
 export default function RootLayout({
   children,
 }: {
@@ -12,6 +7,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <title>Teste Secretária Naty</title>
+      </head>
       <body
         className={inter.className}
         style={{
