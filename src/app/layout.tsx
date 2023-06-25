@@ -1,12 +1,11 @@
-"use client";
 import { Inter } from "next/font/google";
-
-export const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Teste Secretária Naty",
   description: "Esse é um teste da empresa Secretária Naty",
 };
+
+export const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
