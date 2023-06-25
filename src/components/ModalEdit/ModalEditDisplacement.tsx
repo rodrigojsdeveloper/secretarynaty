@@ -67,7 +67,7 @@ const ModalEditDisplacement = ({ id, setShowModalEdit, data }: IModalEdit) => {
         fullWidth
         {...register("fimDeslocamento")}
         error={errors.fimDeslocamento?.message ? true : false}
-        defaultValue={data.fimDeslocamento}
+        defaultValue={data.fimDeslocamento.split("T")[0]}
         InputLabelProps={{
           shrink: true,
         }}
