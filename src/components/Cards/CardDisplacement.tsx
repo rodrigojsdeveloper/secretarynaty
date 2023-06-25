@@ -1,5 +1,6 @@
 import { ModalEditDisplacement } from "../ModalEdit/ModalEditDisplacement";
 import { IDisplacement, IDisplacementProps } from "@/interfaces";
+import { renderFieldValue } from "@/utils/renderFieldValue";
 import { formattedDate } from "@/utils/formattedDate";
 import { ModalBackground } from "../ModalBackground";
 import maps from "../../assets/displacement.png";
@@ -47,45 +48,53 @@ const CardDisplacement = ({ displacement }: IDisplacement) => {
           id={Number(displacementId)}
         >
           <Text>
-            KM Inicial: <Result>{displacement.kmInicial}</Result>
+            Id: <Result>{renderFieldValue(displacement.id)}</Result>
           </Text>
           <Text>
-            KM Final:{" "}
-            <Result>
-              {displacement.kmFinal ? displacement.kmFinal : "null"}
-            </Result>
+            KM Inicial:{" "}
+            <Result>{renderFieldValue(displacement.kmInicial)}</Result>
+          </Text>
+          <Text>
+            KM Final: <Result>{renderFieldValue(displacement.kmFinal)}</Result>
           </Text>
           <Text>
             Inicio do Des:{" "}
             <Result>
-              {formattedDate(String(displacement.inicioDeslocamento))}
+              {renderFieldValue(
+                formattedDate(String(displacement.inicioDeslocamento))
+              )}
             </Result>
           </Text>
           <Text>
             Fim do Des:{" "}
             <Result>
-              {displacement.fimDeslocamento
-                ? formattedDate(String(displacement.fimDeslocamento))
-                : "null"}
+              {renderFieldValue(
+                formattedDate(String(displacement.fimDeslocamento))
+              )}
             </Result>
           </Text>
           <Text>
-            Check List: <Result>{displacement.checkList}</Result>
+            Check List:{" "}
+            <Result>{renderFieldValue(displacement.checkList)}</Result>
           </Text>
           <Text>
-            Motivo: <Result>{displacement.motivo}</Result>
+            Motivo: <Result>{renderFieldValue(displacement.motivo)}</Result>
           </Text>
           <Text>
-            Observação: <Result>{displacement.observacao}</Result>
+            Observação:{" "}
+            <Result>{renderFieldValue(displacement.observacao)}</Result>
           </Text>
           <Text>
-            ID Condutor: <Result>{displacement.idCondutor}</Result>
+            ID Condutor:{" "}
+            <Result>{renderFieldValue(displacement.idCondutor)}</Result>
           </Text>
           <Text>
-            ID Veículo: <Result>{displacement.idVeiculo}</Result>
+            ID Veículo:{" "}
+            <Result>{renderFieldValue(displacement.idVeiculo)}</Result>
           </Text>
           <Text>
-            ID Cliente: <Result>{displacement.idCliente}</Result>
+            ID Cliente:{" "}
+            <Result>{renderFieldValue(displacement.idCliente)}</Result>
           </Text>
 
           <Button

@@ -1,4 +1,5 @@
 import { ModalEditClient } from "../ModalEdit/ModalEditClient";
+import { renderFieldValue } from "@/utils/renderFieldValue";
 import { ModalBackground } from "../ModalBackground";
 import { IClient, IClientProps } from "@/interfaces";
 import { useParams } from "react-router-dom";
@@ -46,28 +47,33 @@ const CardClient = ({ client }: IClient) => {
           id={Number(clientId)}
         >
           <Text>
-            N. do Doc: <Result>{client.numeroDocumento}</Result>
+            Id: <Result>{renderFieldValue(client.id)}</Result>
           </Text>
           <Text>
-            Tipo do Doc: <Result>{client.tipoDocumento}</Result>
+            N. do Doc:{" "}
+            <Result>{renderFieldValue(client.numeroDocumento)}</Result>
           </Text>
           <Text>
-            Nome: <Result>{client.nome}</Result>
+            Tipo do Doc:{" "}
+            <Result>{renderFieldValue(client.tipoDocumento)}</Result>
           </Text>
           <Text>
-            Logradouro: <Result>{client.logradouro}</Result>
+            Nome: <Result>{renderFieldValue(client.nome)}</Result>
           </Text>
           <Text>
-            Número: <Result>{client.numero}</Result>
+            Logradouro: <Result>{renderFieldValue(client.logradouro)}</Result>
           </Text>
           <Text>
-            Bairro: <Result>{client.bairro}</Result>
+            Número: <Result>{renderFieldValue(client.numero)}</Result>
           </Text>
           <Text>
-            Cidade: <Result>{client.cidade}</Result>
+            Bairro: <Result>{renderFieldValue(client.bairro)}</Result>
           </Text>
           <Text>
-            UF: <Result>{client.uf}</Result>
+            Cidade: <Result>{renderFieldValue(client.cidade)}</Result>
+          </Text>
+          <Text>
+            UF: <Result>{renderFieldValue(client.uf)}</Result>
           </Text>
 
           <Button

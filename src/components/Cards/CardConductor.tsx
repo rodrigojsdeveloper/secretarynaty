@@ -1,4 +1,5 @@
 import { ModalEditConductor } from "../ModalEdit/ModalEditConductor";
+import { renderFieldValue } from "@/utils/renderFieldValue";
 import { IConductor, IConductorProps } from "@/interfaces";
 import { formattedDate } from "@/utils/formattedDate";
 import { ModalBackground } from "../ModalBackground";
@@ -47,18 +48,25 @@ const CardConductor = ({ conductor }: IConductor) => {
           id={Number(conductorId)}
         >
           <Text>
-            Nome: <Result>{conductor.nome}</Result>
+            Id: <Result>{renderFieldValue(conductor.id)}</Result>
           </Text>
           <Text>
-            N. da Hab: <Result>{conductor.numeroHabilitacao}</Result>
+            Nome: <Result>{renderFieldValue(conductor.nome)}</Result>
           </Text>
           <Text>
-            Cat. da Hab: <Result>{conductor.catergoriaHabilitacao}</Result>
+            N. da Hab:{" "}
+            <Result>{renderFieldValue(conductor.numeroHabilitacao)}</Result>
+          </Text>
+          <Text>
+            Cat. da Hab:{" "}
+            <Result>{renderFieldValue(conductor.catergoriaHabilitacao)}</Result>
           </Text>
           <Text>
             Ven. da Hab:{" "}
             <Result>
-              {formattedDate(String(conductor.vencimentoHabilitacao))}
+              {renderFieldValue(
+                formattedDate(String(conductor.vencimentoHabilitacao))
+              )}
             </Result>
           </Text>
 

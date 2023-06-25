@@ -1,4 +1,5 @@
 import { ModalEditVehicle } from "../ModalEdit/ModalEditVehicle";
+import { renderFieldValue } from "@/utils/renderFieldValue";
 import { IVehicle, IVehicleProps } from "@/interfaces";
 import { ModalBackground } from "../ModalBackground";
 import { useParams } from "react-router-dom";
@@ -46,16 +47,21 @@ const CardVehicle = ({ vehicle }: IVehicle) => {
           id={Number(vehicleId)}
         >
           <Text>
-            Placa: <Result>{vehicle.placa}</Result>
+            Id: <Result>{renderFieldValue(vehicle.id)}</Result>
           </Text>
           <Text>
-            Marca Modelo: <Result>{vehicle.marcaModelo}</Result>
+            Placa: <Result>{renderFieldValue(vehicle.placa)}</Result>
           </Text>
           <Text>
-            Ano de Fab: <Result>{vehicle.anoFabricacao}</Result>
+            Marca Modelo:{" "}
+            <Result>{renderFieldValue(vehicle.marcaModelo)}</Result>
           </Text>
           <Text>
-            KM Atual: <Result>{vehicle.kmAtual}</Result>
+            Ano de Fab:{" "}
+            <Result>{renderFieldValue(vehicle.anoFabricacao)}</Result>
+          </Text>
+          <Text>
+            KM Atual: <Result>{renderFieldValue(vehicle.kmAtual)}</Result>
           </Text>
 
           <Button

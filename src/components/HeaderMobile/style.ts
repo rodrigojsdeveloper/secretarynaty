@@ -12,6 +12,9 @@ const Container = styled("nav")({
   left: 0,
   boxSizing: "border-box",
   padding: "10px 0",
+  ["@media (min-width: 1040px)"]: {
+    display: "none"
+  }
 });
 
 export { Container };
