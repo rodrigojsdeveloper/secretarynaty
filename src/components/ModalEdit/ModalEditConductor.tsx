@@ -1,10 +1,9 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ModalEditLayout } from "./ModalEditLayout";
+import { SubmitForm } from "../SubmitForm";
 import { IModalEdit } from "@/interfaces";
 import { TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { LoadingButton } from "@mui/lab";
-import { Button } from "@mui/material";
 import { toast } from "react-toastify";
 import { api } from "@/services/api";
 import { useState } from "react";
@@ -14,7 +13,7 @@ const ModalEditConductor = ({ id, setShowModalEdit, data }: IModalEdit) => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const schema = yup.object().shape({
-    numeroHabilitacao: yup.string().required(""),
+    categoriaHabilitacao: yup.string().required(""),
     vencimentoHabilitacao: yup.string().required(""),
   });
 
@@ -51,17 +50,15 @@ const ModalEditConductor = ({ id, setShowModalEdit, data }: IModalEdit) => {
       setShowModalEdit={setShowModalEdit}
     >
       <TextField
-        id="outlined-basic"
-        label="Número da Habilitação"
+        label="Categoria da Habilitação"
         variant="outlined"
         margin="dense"
         fullWidth
-        {...register("numeroHabilitacao")}
-        error={errors.numeroHabilitacao?.message ? true : false}
-        defaultValue={data.numeroHabilitacao}
+        {...register("categoriaHabilitacao")}
+        error={errors.categoriaHabilitacao?.message ? true : false}
+        defaultValue={data.catergoriaHabilitacao}
       />
       <TextField
-        id="outlined-basic"
         label="Vencimento da Habilitação"
         variant="outlined"
         margin="normal"
@@ -74,20 +71,7 @@ const ModalEditConductor = ({ id, setShowModalEdit, data }: IModalEdit) => {
           shrink: true,
         }}
       />
-      {loading ? (
-        <LoadingButton fullWidth loading variant="contained">
-          Submit
-        </LoadingButton>
-      ) : (
-        <Button
-          fullWidth
-          variant="contained"
-          type="submit"
-          style={{ background: "#2196f3" }}
-        >
-          Editar
-        </Button>
-      )}
+      <SubmitForm loading={loading} />
     </ModalEditLayout>
   );
 };

@@ -1,9 +1,8 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import { SubmitForm } from "../SubmitForm";
 import { FormLayout } from "./FormLayout";
 import { useForm } from "react-hook-form";
-import { LoadingButton } from "@mui/lab";
 import React, { useState } from "react";
-import { Button } from "@mui/material";
 import { toast } from "react-toastify";
 import { api } from "@/services/api";
 import * as yup from "yup";
@@ -154,20 +153,7 @@ const FormClient = () => {
           <MenuItem value="TO">TO</MenuItem>
         </Select>
       </FormControl>
-      {loading ? (
-        <LoadingButton fullWidth loading variant="contained">
-          Submit
-        </LoadingButton>
-      ) : (
-        <Button
-          fullWidth
-          variant="contained"
-          type="submit"
-          style={{ background: "#2196f3" }}
-        >
-          Cadastrar
-        </Button>
-      )}
+      <SubmitForm loading={loading} />
     </FormLayout>
   );
 };

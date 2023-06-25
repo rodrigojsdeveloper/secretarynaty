@@ -1,10 +1,9 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ModalEditLayout } from "./ModalEditLayout";
+import { SubmitForm } from "../SubmitForm";
 import { IModalEdit } from "@/interfaces";
 import { TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { LoadingButton } from "@mui/lab";
-import { Button } from "@mui/material";
 import { toast } from "react-toastify";
 import { api } from "@/services/api";
 import { useState } from "react";
@@ -52,7 +51,6 @@ const ModalEditDisplacement = ({ id, setShowModalEdit, data }: IModalEdit) => {
       setShowModalEdit={setShowModalEdit}
     >
       <TextField
-        id="outlined-basic"
         label="KM Final"
         variant="outlined"
         margin="normal"
@@ -62,7 +60,6 @@ const ModalEditDisplacement = ({ id, setShowModalEdit, data }: IModalEdit) => {
         defaultValue={data.kmFinal}
       />
       <TextField
-        id="outlined-basic"
         label="Fim do Deslocamento"
         variant="outlined"
         margin="normal"
@@ -76,7 +73,6 @@ const ModalEditDisplacement = ({ id, setShowModalEdit, data }: IModalEdit) => {
         }}
       />
       <TextField
-        id="outlined-basic"
         label="Observação"
         variant="outlined"
         margin="normal"
@@ -85,20 +81,7 @@ const ModalEditDisplacement = ({ id, setShowModalEdit, data }: IModalEdit) => {
         error={errors.observacao?.message ? true : false}
         defaultValue={data.observacao}
       />
-      {loading ? (
-        <LoadingButton fullWidth loading variant="contained">
-          Submit
-        </LoadingButton>
-      ) : (
-        <Button
-          fullWidth
-          variant="contained"
-          type="submit"
-          style={{ background: "#2196f3" }}
-        >
-          Editar
-        </Button>
-      )}
+      <SubmitForm loading={loading} />
     </ModalEditLayout>
   );
 };

@@ -1,10 +1,9 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ModalEditLayout } from "./ModalEditLayout";
-import LoadingButton from "@mui/lab/LoadingButton";
+import { SubmitForm } from "../SubmitForm";
 import { IModalEdit } from "@/interfaces";
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
-import { Button } from "@mui/material";
 import { toast } from "react-toastify";
 import { api } from "@/services/api";
 import * as yup from "yup";
@@ -61,7 +60,6 @@ const ModalEditClient = ({ id, setShowModalEdit, data }: IModalEdit) => {
       setShowModalEdit={setShowModalEdit}
     >
       <TextField
-        id="outlined-basic"
         label="Nome"
         variant="outlined"
         margin="dense"
@@ -71,7 +69,6 @@ const ModalEditClient = ({ id, setShowModalEdit, data }: IModalEdit) => {
         defaultValue={data.nome}
       />
       <TextField
-        id="outlined-basic"
         label="Logradouro"
         variant="outlined"
         margin="normal"
@@ -81,7 +78,6 @@ const ModalEditClient = ({ id, setShowModalEdit, data }: IModalEdit) => {
         defaultValue={data.logradouro}
       />
       <TextField
-        id="outlined-basic"
         label="Número"
         variant="outlined"
         margin="dense"
@@ -91,7 +87,6 @@ const ModalEditClient = ({ id, setShowModalEdit, data }: IModalEdit) => {
         defaultValue={data.numero}
       />
       <TextField
-        id="outlined-basic"
         label="Bairro"
         variant="outlined"
         margin="normal"
@@ -101,7 +96,6 @@ const ModalEditClient = ({ id, setShowModalEdit, data }: IModalEdit) => {
         defaultValue={data.bairro}
       />
       <TextField
-        id="outlined-basic"
         label="Cidade"
         variant="outlined"
         margin="dense"
@@ -149,20 +143,7 @@ const ModalEditClient = ({ id, setShowModalEdit, data }: IModalEdit) => {
           <MenuItem value="TO">TO</MenuItem>
         </Select>
       </FormControl>
-      {loading ? (
-        <LoadingButton fullWidth loading variant="contained">
-          Submit
-        </LoadingButton>
-      ) : (
-        <Button
-          fullWidth
-          variant="contained"
-          type="submit"
-          style={{ background: "#2196f3" }}
-        >
-          Editar
-        </Button>
-      )}
+      <SubmitForm loading={loading} />
     </ModalEditLayout>
   );
 };

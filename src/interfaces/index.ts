@@ -101,3 +101,7 @@ export interface IListLayout {
   heading: string;
   children: React.ReactNode;
 }
+
+export interface ISubmitForm {
+  loading: boolean;
+}
