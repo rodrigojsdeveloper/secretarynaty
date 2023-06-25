@@ -36,7 +36,7 @@ const Content = styled("menu")({
   padding: "10px 5px",
   overflowY: "auto",
   boxSizing: "border-box",
-  ["@media (max-width: 1040px)"]: {
+  ["@media (max-width: 1265px)"]: {
     justifyContent: "center",
   },
 });
