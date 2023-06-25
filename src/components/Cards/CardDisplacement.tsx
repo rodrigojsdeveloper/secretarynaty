@@ -52,9 +52,7 @@ const CardDisplacement = ({ displacement }: IDisplacement) => {
           <Text>
             KM Final:{" "}
             <Result>
-              {displacement.kmFinal
-                ? displacement.kmFinal
-                : displacement.kmInicial * 2}
+              {displacement.kmFinal ? displacement.kmFinal : "null"}
             </Result>
           </Text>
           <Text>
@@ -68,14 +66,7 @@ const CardDisplacement = ({ displacement }: IDisplacement) => {
             <Result>
               {displacement.fimDeslocamento
                 ? formattedDate(String(displacement.fimDeslocamento))
-                : formattedDate(
-                    String(
-                      new Date(
-                        new Date(displacement.inicioDeslocamento).getTime() +
-                          24 * 60 * 60 * 1000
-                      )
-                    )
-                  )}
+                : "null"}
             </Result>
           </Text>
           <Text>

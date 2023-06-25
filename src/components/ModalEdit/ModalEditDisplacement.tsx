@@ -1,5 +1,4 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { formattedDate } from "@/utils/formattedDate";
 import { ModalEditLayout } from "./ModalEditLayout";
 import { IModalEdit } from "@/interfaces";
 import { TextField } from "@mui/material";
@@ -60,7 +59,7 @@ const ModalEditDisplacement = ({ id, setShowModalEdit, data }: IModalEdit) => {
         fullWidth
         {...register("kmFinal")}
         error={errors.kmFinal?.message ? true : false}
-        defaultValue={data.kmInicial * 2}
+        defaultValue={data.kmFinal}
       />
       <TextField
         id="outlined-basic"
@@ -71,16 +70,7 @@ const ModalEditDisplacement = ({ id, setShowModalEdit, data }: IModalEdit) => {
         fullWidth
         {...register("fimDeslocamento")}
         error={errors.fimDeslocamento?.message ? true : false}
-        defaultValue={formattedDate(
-          String(
-            new Date(
-              new Date(data.inicioDeslocamento).getTime() + 24 * 60 * 60 * 1000
-            )
-          )
-        )
-          .split("/")
-          .reverse()
-          .join("-")}
+        defaultValue={data.fimDeslocamento}
         InputLabelProps={{
           shrink: true,
         }}

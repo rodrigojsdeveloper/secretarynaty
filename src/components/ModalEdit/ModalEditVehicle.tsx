@@ -14,7 +14,6 @@ const ModalEditVehicle = ({ id, setShowModalEdit, data }: IModalEdit) => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const schema = yup.object().shape({
-    placa: yup.string().required(""),
     marcaModelo: yup.string().required(""),
     anoFabricacao: yup.string().required(""),
     kmAtual: yup.string().required(""),
@@ -52,15 +51,6 @@ const ModalEditVehicle = ({ id, setShowModalEdit, data }: IModalEdit) => {
       onSubmit={handleSubmit(onSubmitFunction)}
       setShowModalEdit={setShowModalEdit}
     >
-      <TextField
-        id="outlined-basic"
-        label="Placa"
-        variant="outlined"
-        fullWidth
-        {...register("placa")}
-        error={errors.placa?.message ? true : false}
-        defaultValue={data.placa}
-      />
       <TextField
         id="outlined-basic"
         label="Marca do Modelo"
