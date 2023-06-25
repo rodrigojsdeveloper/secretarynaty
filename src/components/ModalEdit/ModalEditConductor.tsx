@@ -25,13 +25,19 @@ const ModalEditConductor = ({ id, setShowModalEdit, data }: IModalEdit) => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmitFunction = (data: any) => {
+  const onSubmitFunction = (dataForm: any) => {
     setLoading(true);
 
-    data.id = id;
+    dataForm.id = id;
 
+    if (
+      dataForm.vencimentoHabilitacao ===
+      data.vencimentoHabilitacao.split("T")[0]
+    ) {
+      dataForm.vencimentoHabilitacao = data.vencimentoHabilitacao;
+    }
     api
-      .put(`Condutor/${id}`, data)
+      .put(`Condutor/${id}`, dataForm)
       .then((_) => {
         toast.success("Condutor editado com sucesso!");
         setShowModalEdit(false);
