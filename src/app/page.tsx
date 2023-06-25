@@ -68,6 +68,7 @@ export default function Home() {
           size="large"
           variant="contained"
           onClick={() => router.push("/client")}
+          style={{ background: "#2196f3" }}
         >
           Entrar
         </Button>

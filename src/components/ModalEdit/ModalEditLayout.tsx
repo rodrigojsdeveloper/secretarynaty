@@ -16,9 +16,9 @@ const ModalEditLayout = ({
         <ContainerButton>
           <Button
             fullWidth
-            size="large"
             variant="outlined"
             onClick={() => setShowModalEdit(false)}
+            style={{ color: "#2196f3", borderColor: "#2196f3" }}
           >
             Voltar
           </Button>

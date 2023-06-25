@@ -75,11 +75,16 @@ const ModalEditConductor = ({ id, setShowModalEdit, data }: IModalEdit) => {
         }}
       />
       {loading ? (
-        <LoadingButton fullWidth size="large" loading variant="contained">
+        <LoadingButton fullWidth loading variant="contained">
           Submit
         </LoadingButton>
       ) : (
-        <Button fullWidth size="large" variant="contained" type="submit">
+        <Button
+          fullWidth
+          variant="contained"
+          type="submit"
+          style={{ background: "#2196f3" }}
+        >
           Editar
         </Button>
       )}

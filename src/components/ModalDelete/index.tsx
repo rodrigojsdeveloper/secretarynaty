@@ -60,6 +60,7 @@ const ModalDelete = ({
           fullWidth
           variant="outlined"
           onClick={() => setShowModalDelete(false)}
+          style={{ color: "#2196f3", borderColor: "#2196f3" }}
         >
           Voltar
         </Button>

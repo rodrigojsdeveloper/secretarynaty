@@ -81,6 +81,7 @@ const CardClient = ({ client }: IClient) => {
             onClick={() => setShowModalEdit(true)}
             fullWidth
             size="small"
+            style={{ color: "#2196f3", borderColor: "#2196f3" }}
           >
             Editar
           </Button>

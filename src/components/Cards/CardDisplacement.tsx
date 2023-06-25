@@ -102,6 +102,7 @@ const CardDisplacement = ({ displacement }: IDisplacement) => {
             onClick={() => setShowModalEdit(true)}
             fullWidth
             size="small"
+            style={{ color: "#2196f3", borderColor: "#2196f3" }}
           >
             Editar
           </Button>
