@@ -1,5 +1,9 @@
 const renderFieldValue = (value: any) => {
-  return value !== null ? value : "Indefinido";
+  if (value !== null && value !== "") {
+    return value;
+  } else {
+    return "Indefinido";
+  }
 };
 
 export { renderFieldValue };
