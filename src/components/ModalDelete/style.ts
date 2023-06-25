@@ -1,7 +1,6 @@
 import { styled } from "@mui/system";
 
 const Container = styled("div")({
-  fontFamily: "Lexend, monospace",
   width: "100%",
   maxWidth: "300px",
   height: "min-content",

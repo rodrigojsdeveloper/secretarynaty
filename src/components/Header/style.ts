@@ -1,7 +1,6 @@
 import { styled } from "@mui/material";
 
 const Container = styled("header")({
-  fontFamily: "Lexend, monospace",
   display: "flex",
   alignItems: "center",
   width: "100%",

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "../Header/style";
+import { inter } from "@/app/layout";
 import { Container } from "./style";
 
 const HeaderMobile = () => {
@@ -12,7 +13,7 @@ const HeaderMobile = () => {
   }, []);
 
   return (
-    <Container>
+    <Container className={inter.className}>
       <Link
         href="/client"
         style={

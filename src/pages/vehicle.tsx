@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Container } from "../app/stylePages";
 import { Header } from "@/components/Header";
+import { inter } from "@/app/layout";
 
 const Vehicle = () => {
   return (
@@ -32,7 +33,7 @@ const Vehicle = () => {
         </style>
       </HelmetProvider>
       <Header />
-      <Container>
+      <Container className={inter.className}>
         <FormVehicle />
         <ListVehicles />
       </Container>

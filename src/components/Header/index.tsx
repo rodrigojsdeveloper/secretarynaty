@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import menu from "../../assets/menu.png";
 import logo from "../../assets/logo.png";
+import { inter } from "@/app/layout";
 import x from "../../assets/x.png";
 import Image from "next/image";
 import {
@@ -39,7 +40,7 @@ const Header = () => {
   }, []);
 
   return (
-    <Container>
+    <Container className={inter.className}>
       <SubContainer>
         <Image
           src={logo}

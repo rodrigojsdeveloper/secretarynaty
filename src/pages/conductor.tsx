@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Container } from "../app/stylePages";
 import { Header } from "@/components/Header";
+import { inter } from "@/app/layout";
 
 const Conductor = () => {
   return (
@@ -32,7 +33,7 @@ const Conductor = () => {
         </style>
       </HelmetProvider>
       <Header />
-      <Container>
+      <Container className={inter.className}>
         <FormConductor />
         <ListConductors />
       </Container>
