@@ -31,7 +31,6 @@ Seguintes ferramentas foram usadas neste projeto:
 - [TypeScript](https://www.typescriptlang.org/)
 - [Material UI](https://mui.com/)
 - [Axios](https://axios-http.com/)
-- [React Helmet](https://github.com/nfl/react-helmet/)
 - [Toastify](https://fkhadra.github.io/react-toastify/introduction/)
 
 ## :checkered_flag: Iniciando o Projeto
