@@ -32,6 +32,7 @@ Seguintes ferramentas foram usadas neste projeto:
 - [Material UI](https://mui.com/)
 - [Axios](https://axios-http.com/)
 - [Toastify](https://fkhadra.github.io/react-toastify/introduction/)
+- [React Hook Form](https://react-hook-form.com/)
 
 ## :checkered_flag: Iniciando o Projeto
 
