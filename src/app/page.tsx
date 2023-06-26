@@ -12,6 +12,9 @@ const Container = styled("div")({
   flexDirection: "row",
   justifyContent: "space-between",
   alignItems: "center",
+  ["@media (max-width: 1024px)"]: {
+    justifyContent: "start",
+  },
 });
 
 const Content = styled("div")({

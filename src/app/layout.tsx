@@ -9,6 +9,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Teste Secretária Naty</title>
+        <meta
+          name="description"
+          content="Esse é um teste da empresa Secretária Naty"
+        />
       </head>
       <body
         className={inter.className}
